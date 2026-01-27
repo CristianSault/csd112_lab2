@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Page</title>
+</head>
+<body style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; margin: 0; padding: 20px;">
+    <header>
+        <h2>Join Us!</h2>
+    </header>
+    <nav id="mainNav" style="background-color: #fff; padding: 0; margin: 0 0 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; background-color: #f8f9fa;">
+            <li style="margin: 0;">
+                <a href=".\index.html" style="display: block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent; transition: all 0.3s;">Home</a>
+            </li>
+            <li style="margin: 0;">
+                <a href=".\bio.html" style="display: block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent; transition: all 0.3s;">Bio</a>
+            </li>
+            <li id="animalsDropdown" style="margin: 0; position: relative;">
+                <a href="#" style="display: block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent; transition: all 0.3s;">Animals ▼</a>
+                <ol id="dropdownMenu" style="list-style: none; position: absolute; top: 100%; left: 0; background-color: #fff; min-width: 200px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin: 0; padding: 0; display: none; z-index: 1000;">
+                    <li style="margin: 0; border-bottom: 1px solid #eee;">
+                        <a href="..\pages\animals\red_panda.html" style="display: block; padding: 12px 20px; text-decoration: none; color: #333; background-color: #fff;">Red Panda</a>
+                    </li>
+                    <li style="margin: 0; border-bottom: 1px solid #eee;">
+                        <a href="..\pages\animals\capybara.html" style="display: block; padding: 12px 20px; text-decoration: none; color: #333; background-color: #fff;">Capybara</a>
+                    </li>
+                    <li style="margin: 0; border-bottom: 1px solid #eee;">
+                        <a href="..\pages\animals\axolotl.html" style="display: block; padding: 12px 20px; text-decoration: none; color: #333; background-color: #fff;">Axolotl</a>
+                    </li>
+                    <li style="margin: 0; border-bottom: 1px solid #eee;">
+                        <a href="..\pages\animals\octopus.html" style="display: block; padding: 12px 20px; text-decoration: none; color: #333; background-color: #fff;">Octopus</a>
+                    </li>
+                    <li style="margin: 0; border-bottom: 1px solid #eee;">
+                        <a href="..\pages\animals\peregrine_falcon.html" style="display: block; padding: 12px 20px; text-decoration: none; color: #333; background-color: #fff;">Peregrine Falcon</a>
+                    </li>
+                    <li style="margin: 0;">
+                        <a href="..\pages\animals\fox.html" style="display: block; padding: 12px 20px; text-decoration: none; color: #333; background-color: #fff;">Fox</a>
+                    </li>
+                </ol>
+            </li>
+        </ul>
+    </nav>
+    <script>
+        const dropdown = document.getElementById('animalsDropdown');
+        const menu = document.getElementById('dropdownMenu');
+        
+        dropdown.addEventListener('mouseenter', function() {
+            menu.style.display = 'block';
+        });
+        
+        dropdown.addEventListener('mouseleave', function() {
+            menu.style.display = 'none';
+        });
+        
+        // Add hover effects to nav links
+        const navLinks = document.querySelectorAll('#mainNav ul > li > a');
+        navLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#e9ecef';
+                this.style.borderBottomColor = '#667eea';
+            });
+            link.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = 'transparent';
+                this.style.borderBottomColor = 'transparent';
+            });
+        });
+        
+        // Add hover effects to dropdown items
+        const dropdownLinks = document.querySelectorAll('#dropdownMenu a');
+        dropdownLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#f8f9fa';
+                this.style.paddingLeft = '25px';
+            });
+            link.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '#fff';
+                this.style.paddingLeft = '20px';
+            });
+        });
+    </script>
+    <main>
+        <p>TO DO!</p>
+        <table><caption>Official Release Schedule</caption></table>
+    </main>
+    <footer>
+        <p>&copy; 2026 Cristian Medina</p>
+        <a href="./index.html" target="_blank" style="display: inline-block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent;">Visit Official Site</a>
+    </footer>
+</body>
+</html>

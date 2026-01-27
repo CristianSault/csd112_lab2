@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Facts</title>
+</head>
+<body style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; margin: 0; padding: 20px;">
+    <header>
+        <h2>Top 6 Facts</h2>
+    </header>
+    <nav id="mainNav" style="background-color: #fff; padding: 0; margin: 0 0 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; background-color: #f8f9fa;">
+            <li style="margin: 0;">
+                <a href=".\index.html" style="display: block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent; transition: all 0.3s;">Home</a>
+            </li>
+            <li style="margin: 0;">
+                <a href=".\join.html" style="display: block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent; transition: all 0.3s;">Join</a>
+            </li>
+            <li id="animalsDropdown" style="margin: 0; position: relative;">
+                <a href="#" style="display: block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent; transition: all 0.3s;">Animals ▼</a>
+                <ol id="dropdownMenu" style="list-style: none; position: absolute; top: 100%; left: 0; background-color: #fff; min-width: 200px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin: 0; padding: 0; display: none; z-index: 1000;">
+                    <li style="margin: 0; border-bottom: 1px solid #eee;">
+                        <a href="..\pages\animals\red_panda.html" style="display: block; padding: 12px 20px; text-decoration: none; color: #333; background-color: #fff;">Red Panda</a>
+                    </li>
+                    <li style="margin: 0; border-bottom: 1px solid #eee;">
+                        <a href="..\pages\animals\capybara.html" style="display: block; padding: 12px 20px; text-decoration: none; color: #333; background-color: #fff;">Capybara</a>
+                    </li>
+                    <li style="margin: 0; border-bottom: 1px solid #eee;">
+                        <a href="..\pages\animals\axolotl.html" style="display: block; padding: 12px 20px; text-decoration: none; color: #333; background-color: #fff;">Axolotl</a>
+                    </li>
+                    <li style="margin: 0; border-bottom: 1px solid #eee;">
+                        <a href="..\pages\animals\octopus.html" style="display: block; padding: 12px 20px; text-decoration: none; color: #333; background-color: #fff;">Octopus</a>
+                    </li>
+                    <li style="margin: 0; border-bottom: 1px solid #eee;">
+                        <a href="..\pages\animals\peregrine_falcon.html" style="display: block; padding: 12px 20px; text-decoration: none; color: #333; background-color: #fff;">Peregrine Falcon</a>
+                    </li>
+                    <li style="margin: 0;">
+                        <a href="..\pages\animals\fox.html" style="display: block; padding: 12px 20px; text-decoration: none; color: #333; background-color: #fff;">Fox</a>
+                    </li>
+                </ol>
+            </li>
+        </ul>
+    </nav>
+    <script>
+        const dropdown = document.getElementById('animalsDropdown');
+        const menu = document.getElementById('dropdownMenu');
+        
+        dropdown.addEventListener('mouseenter', function() {
+            menu.style.display = 'block';
+        });
+        
+        dropdown.addEventListener('mouseleave', function() {
+            menu.style.display = 'none';
+        });
+        
+        // Add hover effects to nav links
+        const navLinks = document.querySelectorAll('#mainNav ul > li > a');
+        navLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#e9ecef';
+                this.style.borderBottomColor = '#667eea';
+            });
+            link.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = 'transparent';
+                this.style.borderBottomColor = 'transparent';
+            });
+        });
+        
+        // Add hover effects to dropdown items
+        const dropdownLinks = document.querySelectorAll('#dropdownMenu a');
+        dropdownLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#f8f9fa';
+                this.style.paddingLeft = '25px';
+            });
+            link.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '#fff';
+                this.style.paddingLeft = '20px';
+            });
+        });
+    </script>
+    <main>
+        <p>An amazing fact for each of <em>my favorite animals</em>. Because 3 wasn't enough!</p>
+        <ol>
+            <li style="background-color: #ffebee; border: 2px solid #e57373; padding: 15px; margin-bottom: 10px; border-radius: 8px;">
+                <strong>Red Panda:</strong> They have a "false thumb" — an extended wrist bone that acts like an opposable thumb, helping them grip bamboo. Even more remarkably, they evolved this adaptation completely independently from giant pandas, a stunning example of convergent evolution.
+            </li>
+            <li style="background-color: #fff3e0; border: 2px solid #ffb74d; padding: 15px; margin-bottom: 10px; border-radius: 8px;">
+                <strong>Capybara:</strong> They can hold their breath underwater for up to 5 minutes and often sleep in water with just their noses poking out. They've also become nature's most popular roommate — over 250 different animal species have been photographed sitting on or hanging out with capybaras.
+            </li>
+            <li style="background-color: #ffcce7; border: 2px solid #ff66b3; padding: 15px; margin-bottom: 10px; border-radius: 8px;">
+                <strong>Axolotl:</strong> They can regenerate not just limbs, but entire organs, parts of their brain, and even portions of their heart and spine — without any scarring. If you transplant an eye or part of a brain from one axolotl to another, it will integrate and function normally.
+            </li>
+            <li style="background-color: #e1f5fe; border: 2px solid #4fc3f7; padding: 15px; margin-bottom: 10px; border-radius: 8px;">
+                <strong>Octopus:</strong> They have nine brains — one central brain and a smaller brain in each of their eight arms. Each arm can "think" independently, taste what it touches, and even continue moving and reacting to stimuli for a while after being completely severed from the body.
+            </li>
+            <li style="background-color: #f3e5f5; border: 2px solid #ba68c8; padding: 15px; margin-bottom: 10px; border-radius: 8px;">
+                <strong>Peregrine Falcon:</strong> During their hunting dive (called a stoop), they can reach speeds over 240 mph, making them the fastest animal on Earth. At those speeds, the impact force when they strike prey mid-air is comparable to being hit by a small car.
+            </li> 
+            <li style="background-color: #e8f5e9; border: 2px solid #81c784; padding: 15px; margin-bottom: 10px; border-radius: 8px;">
+                <strong>Fox (including Arctic Fox):</strong> Foxes use Earth's magnetic field to hunt! They can detect the magnetic field and use it to triangulate the position of prey hidden under snow, then leap in a precise arc to pounce exactly where the prey is — even when they can't see or hear it directly.
+            </li>
+        </ol>
+        <!-- Nested List -->
+        <h4>Favorites Breakdown</h4>
+        <ul>
+            <li>Red Panda
+                <ul>
+                    <li> Superpower
+                        <dl>
+                            <dt><strong>Overwhelming Cuteness</strong>:</dt>
+                            <dd>Paralyzes whoever witnesses its adorable aura.</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>Weakpoint:</dt>
+                            <dd><em>Endangered Species</em></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li>Capybara
+                <ul>
+                    <li> Superpower
+                        <dl>
+                            <dt><strong>Chillest Animal on Earth</strong>:</dt>
+                            <dd>Unfazed by any foes due to the immense amount of other capys in the field.</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li>Axolotl
+                <ul>
+                    <li> Superpower
+                        <dl>
+                            <dt><strong>Astonishing Regeneration</strong>:</dt>
+                            <dd>Able to regenerate any part of its body. After 5-7 times, regrowth might deform. Affected by <em>aging</em>.</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li>Octopus
+                <ul>
+                    <li> Superpower
+                        <dl>
+                            <dt><strong>Master of Disguise</strong>:</dt>
+                            <dd>Can mimic just about any form to blend in with its environment.</dd>
+                        </dl>
+                    </li>
+                    <li> Ability
+                        <dl>
+                            <dt><strong>Escape Squirt</strong>:</dt>
+                            <dd>Can shoot an ink squirt at its foe when threathened.</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li>Peregrine Falcon
+                <ul>
+                    <li> Superpower
+                        <dl>
+                            <dt><strong>Fastest Animal on Earth</strong>:</dt>
+                            <dd>Can reach speeds over 240 mph.</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li>Fox
+                <ul>
+                    <li> Superpower
+                        <dl>
+                            <dt><strong>Magnetised Hunting Sense
+                            </strong>:</dt>
+                            <dd>Uses the magnetic field to triangulate the position of hidden prey.</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2026 Cristian Medina</p>
+        <a href="https://en.wikipedia.org/wiki/Red_panda" target="_blank" style="display: inline-block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent;">Visit Official Site</a>
+    </footer>
+</body>
+</html>

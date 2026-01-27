@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peregrine Falcon</title>
+</head>
+<body style="background: linear-gradient(to bottom right, #ffecd2 0%, #fcb69f 100%); min-height: 100vh; margin: 0; padding: 20px;">
+    <header>
+        <h1>PEREGRINE FALCON! 🦅</h1>
+    </header>
+    <nav id="mainNav" style="background-color: #fff; padding: 0; margin: 0 0 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; background-color: #f8f9fa;">
+            <li style="margin: 0;">
+                <a href="..\index.html" style="display: block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent; transition: all 0.3s;">Home</a>
+            </li>
+            <li style="margin: 0;">
+                <a href="..\bio.html" style="display: block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent; transition: all 0.3s;">Bio</a>
+            </li>
+            <li style="margin: 0;">
+                <a href="..\join.html" style="display: block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent; transition: all 0.3s;">Join</a>
+            </li>
+            <li id="animalsDropdown" style="margin: 0; position: relative;">
+                <a href="#" style="display: block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent; transition: all 0.3s;">Animals ▼</a>
+                <ol id="dropdownMenu" style="list-style: none; position: absolute; top: 100%; left: 0; background-color: #fff; min-width: 200px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin: 0; padding: 0; display: none; z-index: 1000;">
+                    <li style="margin: 0; border-bottom: 1px solid #eee;">
+                        <a href="..\..\pages\animals\red_panda.html" style="display: block; padding: 12px 20px; text-decoration: none; color: #333; background-color: #fff;">Red Panda</a>
+                    </li>
+                    <li style="margin: 0; border-bottom: 1px solid #eee;">
+                        <a href="..\..\pages\animals\capybara.html" style="display: block; padding: 12px 20px; text-decoration: none; color: #333; background-color: #fff;">Capybara</a>
+                    </li>
+                    <li style="margin: 0; border-bottom: 1px solid #eee;">
+                        <a href="..\..\pages\animals\axolotl.html" style="display: block; padding: 12px 20px; text-decoration: none; color: #333; background-color: #fff;">Axolotl</a>
+                    </li>
+                    <li style="margin: 0; border-bottom: 1px solid #eee;">
+                        <a href="..\..\pages\animals\octopus.html" style="display: block; padding: 12px 20px; text-decoration: none; color: #333; background-color: #fff;">Octopus</a>
+                    </li>
+                    <li style="margin: 0;">
+                        <a href="..\..\pages\animals\fox.html" style="display: block; padding: 12px 20px; text-decoration: none; color: #333; background-color: #fff;">Fox</a>
+                    </li>
+                </ol>
+            </li>
+        </ul>
+    </nav>
+    <script>
+        const dropdown = document.getElementById('animalsDropdown');
+        const menu = document.getElementById('dropdownMenu');
+        
+        dropdown.addEventListener('mouseenter', function() {
+            menu.style.display = 'block';
+        });
+        
+        dropdown.addEventListener('mouseleave', function() {
+            menu.style.display = 'none';
+        });
+        
+        // Add hover effects to nav links
+        const navLinks = document.querySelectorAll('#mainNav ul > li > a');
+        navLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#e9ecef';
+                this.style.borderBottomColor = '#667eea';
+            });
+            link.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = 'transparent';
+                this.style.borderBottomColor = 'transparent';
+            });
+        });
+        
+        // Add hover effects to dropdown items
+        const dropdownLinks = document.querySelectorAll('#dropdownMenu a');
+        dropdownLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#f8f9fa';
+                this.style.paddingLeft = '25px';
+            });
+            link.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '#fff';
+                this.style.paddingLeft = '20px';
+            });
+        });
+    </script>
+    <main>
+        <!-- Carousel -->
+        <div style="position: relative; max-width: 800px; margin: 20px auto; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+            <!-- Images -->
+            <img id="img1" src="..." alt="Image 1" style="width: 100%; display: block;">
+            <img id="img2" src="..." alt="Image 2" style="width: 100%; display: none;">
+            <img id="img3" src="..." alt="Image 3" style="width: 100%; display: none;">
+            <img id="img4" src="..." alt="Image 4" style="width: 100%; display: none;">
+            <img id="img5" src="..." alt="Image 5" style="width: 100%; display: none;">
+            <img id="img6" src="..." alt="Image 6" style="width: 100%; display: none;">
+            <img id="img7" src="..." alt="Image 7" style="width: 100%; display: none;">
+            <img id="img8" src="..." alt="Image 8" style="width: 100%; display: none;">
+            <img id="img9" src="..." alt="Image 9" style="width: 100%; display: none;">
+            <img id="img10" src="..." alt="Image 10" style="width: 100%; display: none;">
+            <img id="img11" src="..." alt="Image 11" style="width: 100%; display: none;">
+            
+            <!-- Previous Button -->
+            <button onclick="changeSlide(-1)" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; font-size: 24px; cursor: pointer; border-radius: 5px;">❮</button>
+            
+            <!-- Next Button -->
+            <button onclick="changeSlide(1)" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; font-size: 24px; cursor: pointer; border-radius: 5px;">❯</button>
+            
+            <!-- Dots/Indicators -->
+            <div style="text-align: center; padding: 15px 0; position: absolute; bottom: 0; width: 100%;">
+                <span onclick="currentSlide(1)" style="height: 12px; width: 12px; margin: 0 5px; background-color: #fff; border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                <span onclick="currentSlide(2)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                <span onclick="currentSlide(3)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                <span onclick="currentSlide(4)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                <span onclick="currentSlide(5)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                <span onclick="currentSlide(6)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                <span onclick="currentSlide(7)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                <span onclick="currentSlide(8)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                <span onclick="currentSlide(9)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                <span onclick="currentSlide(10)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                <span onclick="currentSlide(11)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+            </div>
+        </div>
+        <script>
+        let slideIndex = 1;
+        showSlide(slideIndex);
+
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlide(slideIndex = n);
+        }
+
+        function showSlide(n) {
+            let images = document.querySelectorAll('div > img[id^="img"]');
+            let dots = document.querySelectorAll('div > div > span');
+            
+            if (n > images.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = images.length }
+            
+            for (let i = 0; i < images.length; i++) {
+                images[i].style.display = "none";
+            }
+            
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].style.backgroundColor = "rgba(255,255,255,0.5)";
+            }
+            
+            images[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].style.backgroundColor = "#fff";
+        }
+        </script>
+        <!-- Info -->
+        <div style="max-width: 900px; margin: 0 auto; padding: 20px;">
+            <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Scientific Name</h2>
+                <p style="font-style: italic; font-size: 1.2em; color: #555; margin-bottom: 0;">???</p>
+            </section>
+
+            <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Physiological Info</h2>
+                <p style="line-height: 1.6; color: #333;">...</p>
+            </section>
+
+            <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Natural Habitat</h2>
+                <p style="line-height: 1.6; color: #333;">...</p>
+            </section>
+
+            <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Diet</h2>
+                <p style="line-height: 1.6; color: #333;">...</p>
+            </section>
+
+            <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Fun Facts</h2>
+                <ul style="line-height: 1.8; color: #333; padding-left: 25px;">
+                    <li style="margin-bottom: 10px;">...</li>
+                    <li style="margin-bottom: 10px;">...</li>
+                    <li style="margin-bottom: 10px;">...</li>
+                    <li style="margin-bottom: 10px;">...</li>
+                    <li style="margin-bottom: 10px;">...</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 Cristian Medina</p>
+        <a href="https://en.wikipedia.org/wiki/Peregrine_Falcon" target="_blank" style="display: inline-block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent;">More About Peregrine Falcon</a>
+    </footer>
+</body>
+</html>
