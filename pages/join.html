@@ -80,75 +80,144 @@
             });
         });
     </script>
-    <main>
-        <table border="2">
-            <caption>Totally necessary table</caption>
-            <thead><tr>
-                <th>Scientific Name</th>
-                <th>Physiological Info.</th>
-                <th>Natural Habitat</th>
-                <th>Diet</th>
-            </tr></thead>
-            <tbody>
-                <tr>
-                    <td>Ailurus fulgens</td>
-                    <td>Red pandas weight 7-14 pounds (3-6 kg) and measure 20-26 inches (50-65 cm) in body length, plus a 12-20 inch (30-50 cm) bushy tail.</td>
-                    <td>Red pandas live in temperate forests in the Himalayas and mountainous regions of Nepal, India, Bhutan, China, and Myanmar.</td>
-                    <td>Red pandas are primarily herbivorous.</td>
-                </tr>
-                <tr>
-                    <td>Hydrochoerus hydrochaeris</td>
-                    <td>Capybaras weight 77-146 pounds (35-66 kg) and measure about 3.5-4.4 feet (106-134 cm) in length and 20-24 inches (50-62 cm) tall at the shoulder.</td>
-                    <td>Capybaras inhabit densely vegetated areas near bodies of water across South America, including countries like Brazil, Venezuela, Colombia, Argentina, and Paraguay.</td>
-                    <td>Capybaras are strict herbivores that primarily graze on grasses and aquatic plants</td>
-                </tr>
-                <tr>
-                    <td>Ambystoma mexicanum</td>
-                    <td>Axolotls are aquatic salamanders that typically measure 6-18 inches (15-45 cm) in length and weigh 2-8 ounces (60-225 grams).</td>
-                    <td>Axolotls are endemic to Lake Xochimilco and Lake Chalco in the Valley of Mexico, near Mexico City.</td>
-                    <td>Axolotls are carnivorous predators that primarily feed on small aquatic prey.</td>
-                </tr>
-                <tr>
-                    <td>Octopus vulgaris</td>
-                    <td>They range greatly in size depending on species—the common octopus averages 12-36 inches (30-90 cm) and weighs 6.</td>
-                    <td>Octopuses are found in oceans worldwide, from shallow tide pools to depths exceeding 13,000 feet (4,000 meters), though most species prefer coastal waters.</td>
-                    <td>Octopuses are carnivorous hunters that primarily feed on crustaceans (crabs, shrimp, lobsters), mollusks (clams, snails), and fish.</td>
-                </tr>
-                <tr>
-                    <td>Falco peregrinus</td>
-                    <td>Peregrine falcons are medium-sized raptors measuring 14-19 inches (36-49 cm) in length with a wingspan of 3.3-3.6 feet (100-110 cm).</td>
-                    <td>Peregrine falcons are found on every continent except Antarctica</td>
-                    <td rowspan="2">--"Missing Info"--</td>
-                </tr>
-                <tr>
-                    <td>Vulpes vulpes</td>
-                    <td colspan="2">--"Unknown"--</td>
-                </tr>
-            </tbody>
-            <tfoot>
+    <main style="max-width: 1200px; margin: 20px auto; padding: 20px;">
+    
+        <!-- Styled Table -->
+        <div style="overflow-x: auto; margin-bottom: 40px;">
+            <table style="width: 100%; border-collapse: collapse; background-color: rgba(255, 255, 255, 0.95); box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 10px; overflow: hidden;">
+                <caption style="font-size: 1.5em; font-weight: bold; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 50%); color: white; text-align: center;">Animal Comparison Table</caption>
+                
+                <thead>
+                    <tr style="background-color: #667eea; color: white;">
+                        <th style="padding: 15px; text-align: left; font-weight: 600; border-bottom: 2px solid #764ba2;">Scientific Name</th>
+                        <th style="padding: 15px; text-align: left; font-weight: 600; border-bottom: 2px solid #764ba2;">Physiological Info.</th>
+                        <th style="padding: 15px; text-align: left; font-weight: 600; border-bottom: 2px solid #764ba2;">Natural Habitat</th>
+                        <th style="padding: 15px; text-align: left; font-weight: 600; border-bottom: 2px solid #764ba2;">Diet</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr style="background-color: #fff;">
+                        <td style="padding: 12px; border-bottom: 1px solid #e0e0e0; font-style: italic; color: #555;">Ailurus fulgens</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #e0e0e0; color: #333;">Red pandas weight 7-14 pounds (3-6 kg) and measure 20-26 inches (50-65 cm) in body length, plus a 12-20 inch (30-50 cm) bushy tail.</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #e0e0e0; color: #333;">Red pandas live in temperate forests in the Himalayas and mountainous regions of Nepal, India, Bhutan, China, and Myanmar.</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #e0e0e0; color: #333;">Red pandas are primarily herbivorous.</td>
+                    </tr>
+                    <tr style="background-color: #f8f9fa;">
+                        <td style="padding: 12px; border-bottom: 1px solid #e0e0e0; font-style: italic; color: #555;">Hydrochoerus hydrochaeris</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #e0e0e0; color: #333;">Capybaras weight 77-146 pounds (35-66 kg) and measure about 3.5-4.4 feet (106-134 cm) in length and 20-24 inches (50-62 cm) tall at the shoulder.</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #e0e0e0; color: #333;">Capybaras inhabit densely vegetated areas near bodies of water across South America, including countries like Brazil, Venezuela, Colombia, Argentina, and Paraguay.</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #e0e0e0; color: #333;">Capybaras are strict herbivores that primarily graze on grasses and aquatic plants</td>
+                    </tr>
+                    <tr style="background-color: #fff;">
+                        <td style="padding: 12px; border-bottom: 1px solid #e0e0e0; font-style: italic; color: #555;">Ambystoma mexicanum</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #e0e0e0; color: #333;">Axolotls are aquatic salamanders that typically measure 6-18 inches (15-45 cm) in length and weigh 2-8 ounces (60-225 grams).</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #e0e0e0; color: #333;">Axolotls are endemic to Lake Xochimilco and Lake Chalco in the Valley of Mexico, near Mexico City.</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #e0e0e0; color: #333;">Axolotls are carnivorous predators that primarily feed on small aquatic prey.</td>
+                    </tr>
+                    <tr style="background-color: #f8f9fa;">
+                        <td style="padding: 12px; border-bottom: 1px solid #e0e0e0; font-style: italic; color: #555;">Octopus vulgaris</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #e0e0e0; color: #333;">They range greatly in size depending on species—the common octopus averages 12-36 inches (30-90 cm) and weighs 6.</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #e0e0e0; color: #333;">Octopuses are found in oceans worldwide, from shallow tide pools to depths exceeding 13,000 feet (4,000 meters), though most species prefer coastal waters.</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #e0e0e0; color: #333;">Octopuses are carnivorous hunters that primarily feed on crustaceans (crabs, shrimp, lobsters), mollusks (clams, snails), and fish.</td>
+                    </tr>
+                    <tr style="background-color: #fff;">
+                        <td style="padding: 12px; border-bottom: 1px solid #e0e0e0; font-style: italic; color: #555;">Falco peregrinus</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #e0e0e0; color: #333;">Peregrine falcons are medium-sized raptors measuring 14-19 inches (36-49 cm) in length with a wingspan of 3.3-3.6 feet (100-110 cm).</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #e0e0e0; color: #333;">Peregrine falcons are found on every continent except Antarctica</td>
+                        <td rowspan="2" style="padding: 12px; border-bottom: 1px solid #e0e0e0; color: #999; font-style: italic; text-align: center; vertical-align: middle; background-color: #fff3cd;">--"Missing Info"--</td>
+                    </tr>
+                    <tr style="background-color: #f8f9fa;">
+                        <td style="padding: 12px; font-style: italic; color: #555;">Vulpes vulpes</td>
+                        <td colspan="2" style="padding: 12px; color: #999; font-style: italic; text-align: center; background-color: #e7f3ff;">--"Unknown"--</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-            </tfoot>
-        </table>
-        <br>
-        <form action="https://httpbin.org/post" method="POST">
-            <fieldset>
-                <legend>New Member Registration</legend>
-                <label for="user">Username:</label>
-                <input type="text" id="user">
-                <br>
-                <label for="">...</label>
-                <input type="" id="">
-                <br>
-                <label for="">...</label>
-                <input type="" id="">
-                <br>
-                <label for="">...</label>
-                <input type="" id="">
-                <br>
-                <button>Sign up</button>
+        <!-- Styled Form -->
+        <form action="https://httpbin.org/post" method="POST" style="background-color: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); max-width: 600px; margin: 0 auto;">
+            <fieldset style="border: 2px solid #667eea; border-radius: 8px; padding: 25px;">
+                <legend style="font-size: 1.3em; font-weight: bold; color: #667eea; padding: 0 10px;">New Member Registration</legend>
+                
+                <div style="margin-bottom: 15px;">
+                    <label for="user" style="display: block; margin-bottom: 5px; font-weight: 600; color: #333;">Username:</label>
+                    <input type="text" id="user" name="user" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em; box-sizing: border-box;">
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <label for="pass" style="display: block; margin-bottom: 5px; font-weight: 600; color: #333;">Password:</label>
+                    <input type="password" id="pass" name="password" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em; box-sizing: border-box;">
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <label for="birth" style="display: block; margin-bottom: 5px; font-weight: 600; color: #333;">Birthday:</label>
+                    <input type="date" id="birth" name="birthday" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em; box-sizing: border-box;">
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <label for="col" style="display: block; margin-bottom: 5px; font-weight: 600; color: #333;">Team Color:</label>
+                    <input type="color" id="col" name="color" style="width: 100%; height: 50px; border: 1px solid #ccc; border-radius: 5px; cursor: pointer; box-sizing: border-box;">
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <label for="membership" style="display: block; margin-bottom: 5px; font-weight: 600; color: #333;">Membership Level:</label>
+                    <select name="membership_level" id="membership" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em; box-sizing: border-box;">
+                        <option value="free">Free</option>
+                        <option value="silver">Silver</option>
+                        <option value="gold">Gold</option>
+                    </select>
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #333;">Preferred Contact Method:</label>
+                    <div style="display: flex; gap: 20px;">
+                        <label for="email" style="display: flex; align-items: center; cursor: pointer;">
+                            <input type="radio" name="contact" id="email" value="email" style="margin-right: 5px; cursor: pointer;">
+                            Email
+                        </label>
+                        <label for="phone" style="display: flex; align-items: center; cursor: pointer;">
+                            <input type="radio" name="contact" id="phone" value="phone" style="margin-right: 5px; cursor: pointer;">
+                            Phone
+                        </label>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <label for="essay" style="display: block; margin-bottom: 5px; font-weight: 600; color: #333;">Short Essay:</label>
+                    <textarea id="essay" rows="4" name="essay" placeholder="Tell us why you want to join..." style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em; font-family: inherit; resize: vertical; box-sizing: border-box;"></textarea>
+                </div>
+                
+                <button type="submit" style="width: 100%; padding: 12px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 5px; font-size: 1.1em; font-weight: 600; cursor: pointer; transition: transform 0.2s;">Join the Club</button>
             </fieldset>
         </form>
+        <div style="max-width: 900px; margin: 40px auto; padding: 20px;">
+            <div style="background-color: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                <h2 style="color: #667eea; margin-top: 0; margin-bottom: 20px; text-align: center; font-size: 1.8em; border-bottom: 3px solid #667eea; padding-bottom: 15px;">Featured Video</h2>
+                
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); background-color: #000;">
+                    <iframe 
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 8px;"
+                        src="https://www.youtube.com/embed/vnERcPTiLqc?si=VxhxeuYvxDvDVYUh" 
+                        title="YouTube video player" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
     </main>
+    <style>
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        tbody tr:hover {
+            background-color: #e3f2fd !important;
+        }
+    </style>
     <footer>
         <p>&copy; 2026 Cristian Medina</p>
         <a href="./index.html" target="_blank" style="display: inline-block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent;">Visit Official Site</a>
