@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capybara</title>
+    <link rel="stylesheet" href="..\..\css\style.css">
 </head>
-<body style="background: linear-gradient(to bottom right, #ffecd2 0%, #fcb69f 100%); min-height: 100vh; margin: 0; padding: 20px;">
+<body>
     <header>
         <h1>CAPYBARA! 🥥🐕</h1>
     </header>
-    <nav id="mainNav" style="background-color: #fff; padding: 0; margin: 0 0 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+    <nav id="mainNav">
         <ul style="list-style: none; margin: 0; padding: 0; display: flex; background-color: #f8f9fa;">
             <li style="margin: 0;">
-                <a href="..\index.html" style="display: block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent; transition: all 0.3s;">Home</a>
+                <a href="..\..\index.html" style="display: block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent; transition: all 0.3s;">Home</a>
             </li>
             <li style="margin: 0;">
                 <a href="..\bio.html" style="display: block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent; transition: all 0.3s;">Bio</a>
@@ -80,110 +81,112 @@
             });
         });
     </script>
-    <main>
-        <!-- Carousel -->
-        <div style="position: relative; max-width: 800px; margin: 20px auto; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-            <!-- Images -->
-            <img id="img1" src="..\..\images\capybara\by_the_river.jpeg" alt="Image 1" style="width: 100%; display: block;">
-            <img id="img2" src="..\..\images\capybara\capy1.jpg" alt="Image 2" style="width: 100%; display: none;">
-            <img id="img3" src="..\..\images\capybara\relaxing_capybarapng.png" alt="Image 3" style="width: 100%; display: none;">
-            <img id="img4" src="..\..\images\capybara\eating_capy.jpg" alt="Image 4" style="width: 100%; display: none;">
-            <img id="img5" src="..\..\images\capybara\chilling_guys.webp" alt="Image 5" style="width: 100%; display: none;">
-            <img id="img6" src="..\..\images\capybara\capybarajoust.jpg" alt="Image 6" style="width: 100%; display: none;">
-            <img id="img7" src="..\..\images\capybara\capy_family.jpeg" alt="Image 7" style="width: 100%; display: none;">
-            <img id="img8" src="..\..\images\capybara\lil_guys.webp" alt="Image 8" style="width: 100%; display: none;">
-            <img id="img9" src="..\..\images\capybara\capy_family2.jpg" alt="Image 9" style="width: 100%; display: none;">
-            <img id="img10" src="..\..\images\capybara\sitting_capy.jpg" alt="Image 10" style="width: 100%; display: none;">
-            <img id="img11" src="..\..\images\capybara\sleeping_capy.jpg" alt="Image 11" style="width: 100%; display: none;">
-            <img id="img12" src="..\..\images\capybara\chill_dog.webp" alt="Image 11" style="width: 100%; display: none;">
-            
-            <!-- Previous Button -->
-            <button onclick="changeSlide(-1)" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; font-size: 24px; cursor: pointer; border-radius: 5px;">❮</button>
-            
-            <!-- Next Button -->
-            <button onclick="changeSlide(1)" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; font-size: 24px; cursor: pointer; border-radius: 5px;">❯</button>
-            
-            <!-- Dots/Indicators -->
-            <div style="text-align: center; padding: 15px 0; position: absolute; bottom: 0; width: 100%;">
-                <span onclick="currentSlide(1)" style="height: 12px; width: 12px; margin: 0 5px; background-color: #fff; border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
-                <span onclick="currentSlide(2)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
-                <span onclick="currentSlide(3)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
-                <span onclick="currentSlide(4)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
-                <span onclick="currentSlide(5)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
-                <span onclick="currentSlide(6)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
-                <span onclick="currentSlide(7)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
-                <span onclick="currentSlide(8)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
-                <span onclick="currentSlide(9)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
-                <span onclick="currentSlide(10)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
-                <span onclick="currentSlide(11)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
-                <span onclick="currentSlide(12)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+    <div class="card">
+        <main>
+            <!-- Carousel -->
+            <div style="position: relative; max-width: 800px; margin: 20px auto; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                <!-- Images -->
+                <img id="img1" src="..\..\images\capybara\by_the_river.jpeg" alt="Image 1" style="width: 100%; display: block;">
+                <img id="img2" src="..\..\images\capybara\capy1.jpg" alt="Image 2" style="width: 100%; display: none;">
+                <img id="img3" src="..\..\images\capybara\relaxing_capybarapng.png" alt="Image 3" style="width: 100%; display: none;">
+                <img id="img4" src="..\..\images\capybara\eating_capy.jpg" alt="Image 4" style="width: 100%; display: none;">
+                <img id="img5" src="..\..\images\capybara\chilling_guys.webp" alt="Image 5" style="width: 100%; display: none;">
+                <img id="img6" src="..\..\images\capybara\capybarajoust.jpg" alt="Image 6" style="width: 100%; display: none;">
+                <img id="img7" src="..\..\images\capybara\capy_family.jpeg" alt="Image 7" style="width: 100%; display: none;">
+                <img id="img8" src="..\..\images\capybara\lil_guys.webp" alt="Image 8" style="width: 100%; display: none;">
+                <img id="img9" src="..\..\images\capybara\capy_family2.jpg" alt="Image 9" style="width: 100%; display: none;">
+                <img id="img10" src="..\..\images\capybara\sitting_capy.jpg" alt="Image 10" style="width: 100%; display: none;">
+                <img id="img11" src="..\..\images\capybara\sleeping_capy.jpg" alt="Image 11" style="width: 100%; display: none;">
+                <img id="img12" src="..\..\images\capybara\chill_dog.webp" alt="Image 11" style="width: 100%; display: none;">
+                
+                <!-- Previous Button -->
+                <button onclick="changeSlide(-1)" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; font-size: 24px; cursor: pointer; border-radius: 5px;">❮</button>
+                
+                <!-- Next Button -->
+                <button onclick="changeSlide(1)" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; font-size: 24px; cursor: pointer; border-radius: 5px;">❯</button>
+                
+                <!-- Dots/Indicators -->
+                <div style="text-align: center; padding: 15px 0; position: absolute; bottom: 0; width: 100%;">
+                    <span onclick="currentSlide(1)" style="height: 12px; width: 12px; margin: 0 5px; background-color: #fff; border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(2)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(3)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(4)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(5)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(6)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(7)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(8)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(9)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(10)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(11)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(12)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                </div>
             </div>
-        </div>
-        <script>
-        let slideIndex = 1;
-        showSlide(slideIndex);
+            <script>
+            let slideIndex = 1;
+            showSlide(slideIndex);
 
-        function changeSlide(n) {
-            showSlide(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlide(slideIndex = n);
-        }
-
-        function showSlide(n) {
-            let images = document.querySelectorAll('div > img[id^="img"]');
-            let dots = document.querySelectorAll('div > div > span');
-            
-            if (n > images.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = images.length }
-            
-            for (let i = 0; i < images.length; i++) {
-                images[i].style.display = "none";
+            function changeSlide(n) {
+                showSlide(slideIndex += n);
             }
-            
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].style.backgroundColor = "rgba(255,255,255,0.5)";
+
+            function currentSlide(n) {
+                showSlide(slideIndex = n);
             }
-            
-            images[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].style.backgroundColor = "#fff";
-        }
-        </script>
-        <!-- Info -->
-        <div style="max-width: 900px; margin: 0 auto; padding: 20px;">
-            <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Scientific Name</h2>
-                <p style="font-style: italic; font-size: 1.2em; color: #555; margin-bottom: 0;">Hydrochoerus hydrochaeris</p>
-            </section>
 
-            <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Physiological Info</h2>
-                <p style="line-height: 1.6; color: #333;">Capybaras are the world's largest rodents, weighing 77-146 pounds (35-66 kg) and measuring about 3.5-4.4 feet (106-134 cm) in length and 20-24 inches (50-62 cm) tall at the shoulder. They have barrel-shaped bodies covered in coarse, sparse brownish fur, partially webbed feet with four toes on the front feet and three on the back, and no tail. Their eyes, ears, and nostrils are positioned high on their head, allowing them to see, hear, and breathe while mostly submerged in water. They have continuously growing teeth and specialized digestive systems that allow them to ferment tough plant material.</p>
-            </section>
+            function showSlide(n) {
+                let images = document.querySelectorAll('div > img[id^="img"]');
+                let dots = document.querySelectorAll('div > div > span');
+                
+                if (n > images.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = images.length }
+                
+                for (let i = 0; i < images.length; i++) {
+                    images[i].style.display = "none";
+                }
+                
+                for (let i = 0; i < dots.length; i++) {
+                    dots[i].style.backgroundColor = "rgba(255,255,255,0.5)";
+                }
+                
+                images[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].style.backgroundColor = "#fff";
+            }
+            </script>
+            <!-- Info -->
+            <div style="max-width: 900px; margin: 0 auto; padding: 20px;">
+                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Scientific Name</h2>
+                    <p style="font-style: italic; font-size: 1.2em; color: #555; margin-bottom: 0;">Hydrochoerus hydrochaeris</p>
+                </section>
 
-            <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Natural Habitat</h2>
-                <p style="line-height: 1.6; color: #333;">Capybaras inhabit densely vegetated areas near bodies of water across South America, including countries like Brazil, Venezuela, Colombia, Argentina, and Paraguay. They prefer savannas, tropical rainforests, wetlands, and marshes, always staying close to rivers, lakes, ponds, or swamps. They're semi-aquatic animals that depend on water for thermoregulation (keeping cool), predator escape, and mating. They can be found from sea level up to elevations of about 4,300 feet (1,300 meters).</p>
-            </section>
+                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Physiological Info</h2>
+                    <p style="line-height: 1.6; color: #333;">Capybaras are the world's largest rodents, weighing 77-146 pounds (35-66 kg) and measuring about 3.5-4.4 feet (106-134 cm) in length and 20-24 inches (50-62 cm) tall at the shoulder. They have barrel-shaped bodies covered in coarse, sparse brownish fur, partially webbed feet with four toes on the front feet and three on the back, and no tail. Their eyes, ears, and nostrils are positioned high on their head, allowing them to see, hear, and breathe while mostly submerged in water. They have continuously growing teeth and specialized digestive systems that allow them to ferment tough plant material.</p>
+                </section>
 
-            <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Diet</h2>
-                <p style="line-height: 1.6; color: #333;">Capybaras are strict herbivores that primarily graze on grasses and aquatic plants, which make up about 75% of their diet. They also eat fruit, tree bark, reeds, and grain. They consume 6-8 pounds (3-3.5 kg) of grass per day. Interestingly, they practice coprophagy (eating their own feces) to extract maximum nutrients from their fibrous diet, particularly to absorb microbial proteins and B vitamins produced during fermentation in their cecum.</p>
-            </section>
+                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Natural Habitat</h2>
+                    <p style="line-height: 1.6; color: #333;">Capybaras inhabit densely vegetated areas near bodies of water across South America, including countries like Brazil, Venezuela, Colombia, Argentina, and Paraguay. They prefer savannas, tropical rainforests, wetlands, and marshes, always staying close to rivers, lakes, ponds, or swamps. They're semi-aquatic animals that depend on water for thermoregulation (keeping cool), predator escape, and mating. They can be found from sea level up to elevations of about 4,300 feet (1,300 meters).</p>
+                </section>
 
-            <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Fun Facts</h2>
-                <ul style="line-height: 1.8; color: #333; padding-left: 25px;">
-                    <li style="margin-bottom: 10px;">They're highly social animals that live in groups of 10-20 individuals, though groups of up to 100 have been observed during the dry season.</li>
-                    <li style="margin-bottom: 10px;">They can hold their breath underwater for up to 5 minutes and often sleep partially submerged with only their noses above water.</li>
-                    <li style="margin-bottom: 10px;">Over 250 different animal species have been photographed sitting on or near capybaras, earning them the nickname "nature's ottoman".</li>
-                    <li style="margin-bottom: 10px;">They communicate through vocalizations including purrs, barks, whistles, clicks, squeals, and grunts.</li>
-                    <li style="margin-bottom: 10px;">Despite their size, they can run up to 22 mph (35 km/h) on land and are excellent swimmers.</li>
-                </ul>
-            </section>
-        </div>
-    </main>
+                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Diet</h2>
+                    <p style="line-height: 1.6; color: #333;">Capybaras are strict herbivores that primarily graze on grasses and aquatic plants, which make up about 75% of their diet. They also eat fruit, tree bark, reeds, and grain. They consume 6-8 pounds (3-3.5 kg) of grass per day. Interestingly, they practice coprophagy (eating their own feces) to extract maximum nutrients from their fibrous diet, particularly to absorb microbial proteins and B vitamins produced during fermentation in their cecum.</p>
+                </section>
+
+                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Fun Facts</h2>
+                    <ul style="line-height: 1.8; color: #333; padding-left: 25px;">
+                        <li style="margin-bottom: 10px;">They're highly social animals that live in groups of 10-20 individuals, though groups of up to 100 have been observed during the dry season.</li>
+                        <li style="margin-bottom: 10px;">They can hold their breath underwater for up to 5 minutes and often sleep partially submerged with only their noses above water.</li>
+                        <li style="margin-bottom: 10px;">Over 250 different animal species have been photographed sitting on or near capybaras, earning them the nickname "nature's ottoman".</li>
+                        <li style="margin-bottom: 10px;">They communicate through vocalizations including purrs, barks, whistles, clicks, squeals, and grunts.</li>
+                        <li style="margin-bottom: 10px;">Despite their size, they can run up to 22 mph (35 km/h) on land and are excellent swimmers.</li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
     <footer>
         <p>&copy; 2026 Cristian Medina</p>
         <a href="https://en.wikipedia.org/wiki/Capybara" target="_blank" style="display: inline-block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent;">More About Capybara</a>

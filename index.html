@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My 6 Favorite Animals</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>My 6 Favorite Animals 🐼🦊🐙🦅</h1>
+    </header>
+    <nav id="mainNav">
+        <ul id="nav_ul">
+            <li>
+                <a href="pages\bio.html" class="nav_a">Bio</a>
+            </li>
+            <li>
+                <a href="pages\join.html" class="nav_a">Join</a>
+            </li>
+            <li id="animalsDropdown">
+                <a href="#" class="nav_a">Animals ▼</a>
+                <ol id="dropdownMenu">
+                    <li>
+                        <a href="..\pages\animals\red_panda.html" class="nav_a2">Red Panda</a>
+                    </li>
+                    <li>
+                        <a href="..\pages\animals\capybara.html" class="nav_a2">Capybara</a>
+                    </li>
+                    <li>
+                        <a href="..\pages\animals\axolotl.html" class="nav_a2">Axolotl</a>
+                    </li>
+                    <li>
+                        <a href="..\pages\animals\octopus.html" class="nav_a2">Octopus</a>
+                    </li>
+                    <li>
+                        <a href="..\pages\animals\peregrine_falcon.html" class="nav_a2">Peregrine Falcon</a>
+                    </li>
+                    <li>
+                        <a href="..\pages\animals\fox.html" class="nav_a2">Fox</a>
+                    </li>
+                </ol>
+            </li>
+        </ul>
+    </nav>
+    <script>
+        const dropdown = document.getElementById('animalsDropdown');
+        const menu = document.getElementById('dropdownMenu');
+        
+        dropdown.addEventListener('mouseenter', function() {
+            menu.style.display = 'block';
+        });
+        
+        dropdown.addEventListener('mouseleave', function() {
+            menu.style.display = 'none';
+        });
+        
+        // Add hover effects to nav links
+        const navLinks = document.querySelectorAll('#mainNav ul > li > a');
+        navLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#e9ecef';
+                this.style.borderBottomColor = '#667eea';
+            });
+            link.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = 'transparent';
+                this.style.borderBottomColor = 'transparent';
+            });
+        });
+        
+        // Add hover effects to dropdown items
+        const dropdownLinks = document.querySelectorAll('#dropdownMenu a');
+        dropdownLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#f8f9fa';
+                this.style.paddingLeft = '25px';
+            });
+            link.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '#fff';
+                this.style.paddingLeft = '20px';
+            });
+        });
+    </script>
+    <div class="card">
+        <main>
+            <!-- Carousel -->
+            <div style="position: relative; max-width: 800px; margin: 20px auto; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                <!-- Images -->
+                <img id="img1" src="..\images\red_panda\cute_panda.webp" alt="Red Panda" style="width: 100%; display: block;">
+                <img id="img2" src="..\images\capybara\chill_dog.webp" alt="Capybara" style="width: 100%; display: none;">
+                <img id="img3" src="..\images\axolotl\axolotl1.webp" alt="Axolotl" style="width: 100%; display: none;">
+                <img id="img4" src="..\images\octopus\octo1.webp" alt="Octopus" style="width: 100%; display: none;">
+                <img id="img5" src="..\images\peregrine_falcon\falco3.webp" alt="Peregrine Falcon" style="width: 100%; display: none;">
+                <img id="img6" src="..\images\fox\fox1.webp" alt="Fox" style="width: 100%; display: none;">
+                <img id="img7" src="..\images\fox\white\w_fox1.jpg" alt="Arctic Fox" style="width: 100%; display: none;">
+                
+                <!-- Previous Button -->
+                <button onclick="changeSlide(-1)" id="prev_button">❮</button>
+                
+                <!-- Next Button -->
+                <button onclick="changeSlide(1)" id="next_button">❯</button>
+                
+                <!-- Dots/Indicators -->
+                <div style="text-align: center; padding: 15px 0; position: absolute; bottom: 0; width: 100%;">
+                    <span onclick="currentSlide(1)"></span>
+                    <span onclick="currentSlide(2)"></span>
+                    <span onclick="currentSlide(3)"></span>
+                    <span onclick="currentSlide(4)"></span>
+                    <span onclick="currentSlide(5)"></span>
+                    <span onclick="currentSlide(6)"></span>
+                    <span onclick="currentSlide(7)"></span>
+                </div>
+            </div>
+            <script>
+            let slideIndex = 1;
+            showSlide(slideIndex);
+
+            function changeSlide(n) {
+                showSlide(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlide(slideIndex = n);
+            }
+
+            function showSlide(n) {
+                let images = document.querySelectorAll('div > img[id^="img"]');
+                let dots = document.querySelectorAll('div > div > span');
+                
+                if (n > images.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = images.length }
+                
+                for (let i = 0; i < images.length; i++) {
+                    images[i].style.display = "none";
+                }
+                
+                for (let i = 0; i < dots.length; i++) {
+                    dots[i].style.backgroundColor = "rgba(255,255,255,0.5)";
+                }
+                
+                images[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].style.backgroundColor = "#fff";
+            }
+            </script>
+            <p>This website is dedicated to present <em>my 6 favorite animals</em>. I find each of these animals cute and awesome because of the <strong>superpower</strong> each of them possess.</p>
+                
+            <p>Several pictures of each animal, interesting/fun facts, and general information awaits on their dedicated web pages.</p>
+
+            <!-- Hero Image -->
+            <figure>
+                <img src="..\images\red_panda\laying_panda.jpeg" width="700" alt="A red panda resting on a tree branch">
+                <figcaption>Fig 1. <strong>Overwhelming cuteness</strong> is the red panda's superpower!</figcaption>
+            </figure>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2026 Cristian Medina</p>
+        <a href="https://en.wikipedia.org/wiki/Red_panda" target="_blank"">Visit Official Site</a>
+    </footer>
+</body>
+</html>
