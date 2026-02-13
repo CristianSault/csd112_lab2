@@ -3,8 +3,35 @@ body {
     background-color: peachpuff;
     color: black;
     min-height: 100vh; 
-    margin: 0; 
-    padding: 20px;
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    padding-top: 27vh;
+}
+
+header {
+    background-color: silver;
+    text-decoration: none;
+    padding: 5px 0 3px 4vmax;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+footer {
+    background-color: #333;
+    text-decoration: none;
+    padding: 5vw;
+    color: #fff;
+}
+
+footer a {
+    display: inline-block; 
+    padding: 15px 25px; 
+    text-decoration: none; 
+    color: #fff; 
+    border-bottom: 3px solid transparent;
 }
 
 nav {
@@ -12,9 +39,13 @@ nav {
     padding: 20px; 
     text-align: center;
     margin: 0 0 20px 0; 
+    width: 100%;
     border-bottom: 5px solid purple;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 7.4vmax;
+    z-index: 1000;
 }
 
 .nav_a {
@@ -26,8 +57,10 @@ nav {
     transition: all 0.3s;
 }
 
-#nav_ul {
+nav ul {
     list-style: none; 
+    justify-content: space-around;
+    align-items: center;
     margin: 0; 
     padding: 0; 
     display: flex; 
@@ -59,6 +92,102 @@ nav {
     padding: 0; 
     display: none; 
     z-index: 1000;
+}
+
+/* It's not a carousel anymore 😩 */
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    gap: 20px;
+    width: 700px; 
+    margin: 20px auto; 
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#dots {
+    text-align: center; 
+    padding: 15px 0; 
+    position: absolute; 
+    bottom: 5px; 
+    width: 100%;
+}
+
+#prev_button {
+    position: absolute; 
+    top: 50%; 
+    left: 10px; 
+    transform: translateY(-50%); 
+    background-color: rgba(0,0,0,0.5); 
+    color: white; 
+    border: none; 
+    padding: 15px 20px; 
+    font-size: 24px; 
+    cursor: pointer; 
+    border-radius: 5px;
+}
+
+#next_button {
+    position: absolute; 
+    top: 50%; 
+    right: 10px; 
+    transform: translateY(-50%); 
+    background-color: rgba(0,0,0,0.5); 
+    color: white; 
+    border: none; 
+    padding: 15px 20px; 
+    font-size: 24px; 
+    cursor: pointer; 
+    border-radius: 5px;
+}
+
+#dots span {
+    height: 12px; 
+    width: 12px; 
+    margin: 0 5px; 
+    background-color: rgba(255,255,255,0.5); 
+    border-radius: 50%; 
+    display: inline-block; 
+    cursor: pointer; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.outsideCard {
+    background-color: #fff;
+    width: 800px;
+    margin: 0 auto;
+    padding: 15px 20px 0 20px;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #fff;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border: solid goldenrod;
+    border-radius: 50%;
+}
+
+img {
+    width: 100%;
+    display: block;
 }
 
 #id1 {
@@ -110,20 +239,9 @@ nav {
 }
 
 main {
-    max-width: 1200px; 
+    width: 100vh; 
     margin: 20px auto; 
-    padding: 20px;
-}
-
-span {
-    height: 12px; 
-    width: 12px; 
-    margin: 0 5px; 
-    background-color: rgba(255,255,255,0.5); 
-    border-radius: 50%; 
-    display: inline-block; 
-    cursor: pointer; 
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    padding: 10px;
 }
 
 form {
@@ -208,6 +326,11 @@ th {
     border-bottom: 2px solid #764ba2;
 }
 
+#tr_head {
+    background-color: #667eea; 
+    color: white;
+}
+
 .tr_light{
     background-color: #fff;
 }
@@ -254,14 +377,6 @@ a {
     border-bottom: 3px solid transparent;
 }
 
-.card {
-    background-color: #fff;
-    width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 10px;
-}
-
 #join-btn {
     font-size: 20px;
     font-weight: bold;
@@ -277,35 +392,29 @@ a {
     transition: transform 0.2s;
 }
 
-#prev_button {
-    position: absolute; 
-    top: 50%; 
-    left: 10px; 
-    transform: translateY(-50%); 
-    background-color: rgba(0,0,0,0.5); 
-    color: white; 
-    border: none; 
-    padding: 15px 20px; 
-    font-size: 24px; 
-    cursor: pointer; 
-    border-radius: 5px;
+.animal_info {
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 25px; 
+    margin-bottom: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-#next_button {
-    position: absolute; 
-    top: 50%; 
-    right: 10px; 
-    transform: translateY(-50%); 
-    background-color: rgba(0,0,0,0.5); 
-    color: white; 
-    border: none; 
-    padding: 15px 20px; 
-    font-size: 24px; 
-    cursor: pointer; 
-    border-radius: 5px;
+.animal_h2 {
+    color: #d32f2f; 
+    margin-top: 0; 
+    border-bottom: 3px solid #d32f2f; 
+    padding-bottom: 10px;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+.animal_p {
+    line-height: 1.6; 
+    color: #333;
+}
+
+#scientific_name {
+    font-style: italic; 
+    font-size: 1.2em; 
+    color: #555; 
+    margin-bottom: 0;
 }
