@@ -9,6 +9,7 @@
 <body>
     <header>
         <h1>CAPYBARA! 🥥🐕</h1>
+        <button id="theme-btn">Dark Mode</button>
     </header>
     <nav id="mainNav">
         <ul style="list-style: none; margin: 0; padding: 0; display: flex; background-color: #f8f9fa;">
@@ -43,44 +44,6 @@
             </li>
         </ul>
     </nav>
-    <script>
-        const dropdown = document.getElementById('animalsDropdown');
-        const menu = document.getElementById('dropdownMenu');
-        
-        dropdown.addEventListener('mouseenter', function() {
-            menu.style.display = 'block';
-        });
-        
-        dropdown.addEventListener('mouseleave', function() {
-            menu.style.display = 'none';
-        });
-        
-        // Add hover effects to nav links
-        const navLinks = document.querySelectorAll('#mainNav ul > li > a');
-        navLinks.forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = '#e9ecef';
-                this.style.borderBottomColor = '#667eea';
-            });
-            link.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = 'transparent';
-                this.style.borderBottomColor = 'transparent';
-            });
-        });
-        
-        // Add hover effects to dropdown items
-        const dropdownLinks = document.querySelectorAll('#dropdownMenu a');
-        dropdownLinks.forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = '#f8f9fa';
-                this.style.paddingLeft = '25px';
-            });
-            link.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = '#fff';
-                this.style.paddingLeft = '20px';
-            });
-        });
-    </script>
     <div class="card">
         <main>
             <!-- Carousel -->
@@ -121,61 +84,30 @@
                     <span onclick="currentSlide(12)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
                 </div>
             </div>
-            <script>
-            let slideIndex = 1;
-            showSlide(slideIndex);
-
-            function changeSlide(n) {
-                showSlide(slideIndex += n);
-            }
-
-            function currentSlide(n) {
-                showSlide(slideIndex = n);
-            }
-
-            function showSlide(n) {
-                let images = document.querySelectorAll('div > img[id^="img"]');
-                let dots = document.querySelectorAll('div > div > span');
-                
-                if (n > images.length) { slideIndex = 1 }
-                if (n < 1) { slideIndex = images.length }
-                
-                for (let i = 0; i < images.length; i++) {
-                    images[i].style.display = "none";
-                }
-                
-                for (let i = 0; i < dots.length; i++) {
-                    dots[i].style.backgroundColor = "rgba(255,255,255,0.5)";
-                }
-                
-                images[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].style.backgroundColor = "#fff";
-            }
-            </script>
             <!-- Info -->
             <div style="max-width: 900px; margin: 0 auto; padding: 20px;">
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Scientific Name</h2>
-                    <p style="font-style: italic; font-size: 1.2em; color: #555; margin-bottom: 0;">Hydrochoerus hydrochaeris</p>
+                <section>
+                    <h2 class="section-h2">Scientific Name</h2>
+                    <p class="section-p">Hydrochoerus hydrochaeris</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Physiological Info</h2>
-                    <p style="line-height: 1.6; color: #333;">Capybaras are the world's largest rodents, weighing 77-146 pounds (35-66 kg) and measuring about 3.5-4.4 feet (106-134 cm) in length and 20-24 inches (50-62 cm) tall at the shoulder. They have barrel-shaped bodies covered in coarse, sparse brownish fur, partially webbed feet with four toes on the front feet and three on the back, and no tail. Their eyes, ears, and nostrils are positioned high on their head, allowing them to see, hear, and breathe while mostly submerged in water. They have continuously growing teeth and specialized digestive systems that allow them to ferment tough plant material.</p>
+                <section>
+                    <h2 class="section-h2">Physiological Info</h2>
+                    <p class="section-p">Capybaras are the world's largest rodents, weighing 77-146 pounds (35-66 kg) and measuring about 3.5-4.4 feet (106-134 cm) in length and 20-24 inches (50-62 cm) tall at the shoulder. They have barrel-shaped bodies covered in coarse, sparse brownish fur, partially webbed feet with four toes on the front feet and three on the back, and no tail. Their eyes, ears, and nostrils are positioned high on their head, allowing them to see, hear, and breathe while mostly submerged in water. They have continuously growing teeth and specialized digestive systems that allow them to ferment tough plant material.</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Natural Habitat</h2>
-                    <p style="line-height: 1.6; color: #333;">Capybaras inhabit densely vegetated areas near bodies of water across South America, including countries like Brazil, Venezuela, Colombia, Argentina, and Paraguay. They prefer savannas, tropical rainforests, wetlands, and marshes, always staying close to rivers, lakes, ponds, or swamps. They're semi-aquatic animals that depend on water for thermoregulation (keeping cool), predator escape, and mating. They can be found from sea level up to elevations of about 4,300 feet (1,300 meters).</p>
+                <section>
+                    <h2 class="section-h2">Natural Habitat</h2>
+                    <p class="section-p">Capybaras inhabit densely vegetated areas near bodies of water across South America, including countries like Brazil, Venezuela, Colombia, Argentina, and Paraguay. They prefer savannas, tropical rainforests, wetlands, and marshes, always staying close to rivers, lakes, ponds, or swamps. They're semi-aquatic animals that depend on water for thermoregulation (keeping cool), predator escape, and mating. They can be found from sea level up to elevations of about 4,300 feet (1,300 meters).</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Diet</h2>
-                    <p style="line-height: 1.6; color: #333;">Capybaras are strict herbivores that primarily graze on grasses and aquatic plants, which make up about 75% of their diet. They also eat fruit, tree bark, reeds, and grain. They consume 6-8 pounds (3-3.5 kg) of grass per day. Interestingly, they practice coprophagy (eating their own feces) to extract maximum nutrients from their fibrous diet, particularly to absorb microbial proteins and B vitamins produced during fermentation in their cecum.</p>
+                <section>
+                    <h2 class="section-h2">Diet</h2>
+                    <p class="section-p">Capybaras are strict herbivores that primarily graze on grasses and aquatic plants, which make up about 75% of their diet. They also eat fruit, tree bark, reeds, and grain. They consume 6-8 pounds (3-3.5 kg) of grass per day. Interestingly, they practice coprophagy (eating their own feces) to extract maximum nutrients from their fibrous diet, particularly to absorb microbial proteins and B vitamins produced during fermentation in their cecum.</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Fun Facts</h2>
+                <section>
+                    <h2 class="section-h2">Fun Facts</h2>
                     <ul style="line-height: 1.8; color: #333; padding-left: 25px;">
                         <li style="margin-bottom: 10px;">They're highly social animals that live in groups of 10-20 individuals, though groups of up to 100 have been observed during the dry season.</li>
                         <li style="margin-bottom: 10px;">They can hold their breath underwater for up to 5 minutes and often sleep partially submerged with only their noses above water.</li>
@@ -189,7 +121,8 @@
     </div>
     <footer>
         <p>&copy; 2026 Cristian Medina</p>
-        <a href="https://en.wikipedia.org/wiki/Capybara" target="_blank" style="display: inline-block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent;">More About Capybara</a>
+        <a href="https://en.wikipedia.org/wiki/Capybara" target="_blank">More About Capybara</a>
     </footer>
+    <script src="../../js/app.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 <body>
     <header>
         <h1>OCTOPUS! 🐙</h1>
+        <button id="theme-btn">Dark Mode</button>
     </header>
     <nav id="mainNav">
         <ul style="list-style: none; margin: 0; padding: 0; display: flex; background-color: #f8f9fa;">
@@ -43,44 +44,6 @@
             </li>
         </ul>
     </nav>
-    <script>
-        const dropdown = document.getElementById('animalsDropdown');
-        const menu = document.getElementById('dropdownMenu');
-        
-        dropdown.addEventListener('mouseenter', function() {
-            menu.style.display = 'block';
-        });
-        
-        dropdown.addEventListener('mouseleave', function() {
-            menu.style.display = 'none';
-        });
-        
-        // Add hover effects to nav links
-        const navLinks = document.querySelectorAll('#mainNav ul > li > a');
-        navLinks.forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = '#e9ecef';
-                this.style.borderBottomColor = '#667eea';
-            });
-            link.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = 'transparent';
-                this.style.borderBottomColor = 'transparent';
-            });
-        });
-        
-        // Add hover effects to dropdown items
-        const dropdownLinks = document.querySelectorAll('#dropdownMenu a');
-        dropdownLinks.forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = '#f8f9fa';
-                this.style.paddingLeft = '25px';
-            });
-            link.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = '#fff';
-                this.style.paddingLeft = '20px';
-            });
-        });
-    </script>
     <div class="card">
         <main>
             <!-- Carousel -->
@@ -121,61 +84,30 @@
                     <span onclick="currentSlide(12)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
                 </div>
             </div>
-            <script>
-            let slideIndex = 1;
-            showSlide(slideIndex);
-
-            function changeSlide(n) {
-                showSlide(slideIndex += n);
-            }
-
-            function currentSlide(n) {
-                showSlide(slideIndex = n);
-            }
-
-            function showSlide(n) {
-                let images = document.querySelectorAll('div > img[id^="img"]');
-                let dots = document.querySelectorAll('div > div > span');
-                
-                if (n > images.length) { slideIndex = 1 }
-                if (n < 1) { slideIndex = images.length }
-                
-                for (let i = 0; i < images.length; i++) {
-                    images[i].style.display = "none";
-                }
-                
-                for (let i = 0; i < dots.length; i++) {
-                    dots[i].style.backgroundColor = "rgba(255,255,255,0.5)";
-                }
-                
-                images[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].style.backgroundColor = "#fff";
-            }
-            </script>
             <!-- Info -->
             <div style="max-width: 900px; margin: 0 auto; padding: 20px;">
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Scientific Name</h2>
-                    <p style="font-style: italic; font-size: 1.2em; color: #555; margin-bottom: 0;">Octopus vulgaris</p>
+                <section>
+                    <h2 class="section-h2">Scientific Name</h2>
+                    <p class="section-p">Octopus vulgaris</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Physiological Info</h2>
-                    <p style="line-height: 1.6; color: #333;">Octopuses have soft, baggy bodies with eight arms lined with suckers (typically 200-300 per arm). They range greatly in size depending on species—the common octopus averages 12-36 inches (30-90 cm) and weighs 6.6-22 pounds (3-10 kg), while the giant Pacific octopus can reach 16 feet (5 meters) across and weigh up to 110 pounds (50 kg). They have three hearts (two pump blood to the gills, one to the body), blue copper-based blood, a hard beak made of chitin, and no bones or internal skeleton. Their bodies can squeeze through any opening larger than their beak. They possess specialized skin cells called chromatophores that allow them to change color and texture instantly for camouflage and communication.</p>
+                <section>
+                    <h2 class="section-h2">Physiological Info</h2>
+                    <p class="section-p">Octopuses have soft, baggy bodies with eight arms lined with suckers (typically 200-300 per arm). They range greatly in size depending on species—the common octopus averages 12-36 inches (30-90 cm) and weighs 6.6-22 pounds (3-10 kg), while the giant Pacific octopus can reach 16 feet (5 meters) across and weigh up to 110 pounds (50 kg). They have three hearts (two pump blood to the gills, one to the body), blue copper-based blood, a hard beak made of chitin, and no bones or internal skeleton. Their bodies can squeeze through any opening larger than their beak. They possess specialized skin cells called chromatophores that allow them to change color and texture instantly for camouflage and communication.</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Natural Habitat</h2>
-                    <p style="line-height: 1.6; color: #333;">Octopuses are found in oceans worldwide, from shallow tide pools to depths exceeding 13,000 feet (4,000 meters), though most species prefer coastal waters. They inhabit coral reefs, rocky crevices, seagrass beds, and sandy or muddy seafloor environments. Different species occupy different zones—some prefer tropical waters while others live in cold temperate or even Arctic waters. They're solitary creatures that typically establish dens in rock crevices, empty shells, or man-made debris, which they often fortify with rocks and shells. They prefer areas with good hiding spots for protection from predators.</p>
+                <section>
+                    <h2 class="section-h2">Natural Habitat</h2>
+                    <p class="section-p">Octopuses are found in oceans worldwide, from shallow tide pools to depths exceeding 13,000 feet (4,000 meters), though most species prefer coastal waters. They inhabit coral reefs, rocky crevices, seagrass beds, and sandy or muddy seafloor environments. Different species occupy different zones—some prefer tropical waters while others live in cold temperate or even Arctic waters. They're solitary creatures that typically establish dens in rock crevices, empty shells, or man-made debris, which they often fortify with rocks and shells. They prefer areas with good hiding spots for protection from predators.</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Diet</h2>
-                    <p style="line-height: 1.6; color: #333;">Octopuses are carnivorous hunters that primarily feed on crustaceans (crabs, shrimp, lobsters), mollusks (clams, snails), and fish. They hunt using several strategies: ambush predation, active pursuit, and foraging. They capture prey with their arms and suckers, then use their sharp beak to break shells or tear flesh. They inject venom through their saliva to paralyze prey and begin digestion. Some species drill holes in shellfish using a specialized radula (tongue-like organ) and acidic secretions. They're intelligent hunters that can learn, remember locations of prey, and solve problems to access food.</p>
+                <section>
+                    <h2 class="section-h2">Diet</h2>
+                    <p class="section-p">Octopuses are carnivorous hunters that primarily feed on crustaceans (crabs, shrimp, lobsters), mollusks (clams, snails), and fish. They hunt using several strategies: ambush predation, active pursuit, and foraging. They capture prey with their arms and suckers, then use their sharp beak to break shells or tear flesh. They inject venom through their saliva to paralyze prey and begin digestion. Some species drill holes in shellfish using a specialized radula (tongue-like organ) and acidic secretions. They're intelligent hunters that can learn, remember locations of prey, and solve problems to access food.</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Fun Facts</h2>
+                <section>
+                    <h2 class="section-h2">Fun Facts</h2>
                     <ul style="line-height: 1.8; color: #333; padding-left: 25px;">
                         <li style="margin-bottom: 10px;">They have nine brains—one central brain and a smaller "mini-brain" in each of their eight arms, allowing each arm to act semi-independently and even continue moving after being severed</li>
                         <li style="margin-bottom: 10px;">Each arm can taste what it touches through chemoreceptors in the suckers, essentially "tasting" their environment</li>
@@ -191,7 +123,8 @@
     </div>
     <footer>
         <p>&copy; 2026 Cristian Medina</p>
-        <a href="https://en.wikipedia.org/wiki/Octopus" target="_blank" style="display: inline-block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent;">More About Octopus</a>
+        <a href="https://en.wikipedia.org/wiki/Octopus" target="_blank">More About Octopus</a>
     </footer>
+    <script src="../../js/app.js"></script>
 </body>
 </html>

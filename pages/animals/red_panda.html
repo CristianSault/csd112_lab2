@@ -9,6 +9,7 @@
 <body>
     <header>
         <h1>RED PANDA! 🐼🔴</h1>
+        <button id="theme-btn">Dark Mode</button>
     </header>
     <nav id="mainNav">
         <ul style="list-style: none; margin: 0; padding: 0; display: flex; background-color: #f8f9fa;">
@@ -43,44 +44,6 @@
             </li>
         </ul>
     </nav>
-    <script>
-        const dropdown = document.getElementById('animalsDropdown');
-        const menu = document.getElementById('dropdownMenu');
-        
-        dropdown.addEventListener('mouseenter', function() {
-            menu.style.display = 'block';
-        });
-        
-        dropdown.addEventListener('mouseleave', function() {
-            menu.style.display = 'none';
-        });
-        
-        // Add hover effects to nav links
-        const navLinks = document.querySelectorAll('#mainNav ul > li > a');
-        navLinks.forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = '#e9ecef';
-                this.style.borderBottomColor = '#667eea';
-            });
-            link.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = 'transparent';
-                this.style.borderBottomColor = 'transparent';
-            });
-        });
-        
-        // Add hover effects to dropdown items
-        const dropdownLinks = document.querySelectorAll('#dropdownMenu a');
-        dropdownLinks.forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = '#f8f9fa';
-                this.style.paddingLeft = '25px';
-            });
-            link.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = '#fff';
-                this.style.paddingLeft = '20px';
-            });
-        });
-    </script>
     <div class="card">
         <main>
             <!-- Carousel -->
@@ -116,61 +79,30 @@
                     <span onclick="currentSlide(9)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
                 </div>
             </div>
-            <script>
-            let slideIndex = 1;
-            showSlide(slideIndex);
-
-            function changeSlide(n) {
-                showSlide(slideIndex += n);
-            }
-
-            function currentSlide(n) {
-                showSlide(slideIndex = n);
-            }
-
-            function showSlide(n) {
-                let images = document.querySelectorAll('div > img[id^="img"]');
-                let dots = document.querySelectorAll('div > div > span');
-                
-                if (n > images.length) { slideIndex = 1 }
-                if (n < 1) { slideIndex = images.length }
-                
-                for (let i = 0; i < images.length; i++) {
-                    images[i].style.display = "none";
-                }
-                
-                for (let i = 0; i < dots.length; i++) {
-                    dots[i].style.backgroundColor = "rgba(255,255,255,0.5)";
-                }
-                
-                images[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].style.backgroundColor = "#fff";
-            }
-            </script>
             <!-- Info -->
-            <div style="max-width: 900px; margin: 0 auto; padding: 20px;">
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Scientific Name</h2>
-                    <p style="font-style: italic; font-size: 1.2em; color: #555; margin-bottom: 0;">Ailurus fulgens</p>
+            <div id="info-div" style="max-width: 900px; margin: 0 auto; padding: 20px;">
+                <section>
+                    <h2 class="section-h2">Scientific Name</h2>
+                    <p class="section-p">Ailurus fulgens</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Physiological Info</h2>
-                    <p style="line-height: 1.6; color: #333;">Red pandas are about the size of a large house cat, weighing 7-14 pounds (3-6 kg) and measuring 20-26 inches (50-65 cm) in body length, plus a 12-20 inch (30-50 cm) bushy tail. They have thick reddish-brown fur, a long ringed tail, white facial markings, and semi-retractable claws for climbing. Their ankles are extremely flexible, allowing them to climb down trees headfirst. They have a low metabolic rate similar to sloths, which helps them conserve energy on their low-nutrition bamboo diet.</p>
+                <section>
+                    <h2 class="section-h2">Physiological Info</h2>
+                    <p class="section-p">Red pandas are about the size of a large house cat, weighing 7-14 pounds (3-6 kg) and measuring 20-26 inches (50-65 cm) in body length, plus a 12-20 inch (30-50 cm) bushy tail. They have thick reddish-brown fur, a long ringed tail, white facial markings, and semi-retractable claws for climbing. Their ankles are extremely flexible, allowing them to climb down trees headfirst. They have a low metabolic rate similar to sloths, which helps them conserve energy on their low-nutrition bamboo diet.</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Natural Habitat</h2>
-                    <p style="line-height: 1.6; color: #333;">Red pandas live in temperate forests in the Himalayas and mountainous regions of Nepal, India, Bhutan, China, and Myanmar. They prefer high-altitude forests (6,000-12,000 feet / 1,800-3,700 meters) with dense bamboo understory, moderate temperatures, and plenty of tree cover. They're arboreal creatures that spend most of their time in trees.</p>
+                <section>
+                    <h2 class="section-h2">Natural Habitat</h2>
+                    <p class="section-p">Red pandas live in temperate forests in the Himalayas and mountainous regions of Nepal, India, Bhutan, China, and Myanmar. They prefer high-altitude forests (6,000-12,000 feet / 1,800-3,700 meters) with dense bamboo understory, moderate temperatures, and plenty of tree cover. They're arboreal creatures that spend most of their time in trees.</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Diet</h2>
-                    <p style="line-height: 1.6; color: #333;">Despite being classified as carnivores, red pandas are primarily herbivorous. Their diet consists of about 95% bamboo (leaves and shoots), supplemented occasionally with fruits, berries, acorns, mushrooms, birds' eggs, insects, and small mammals. They have to eat 20-30% of their body weight daily (about 2-4 pounds of bamboo) because bamboo is so low in nutrients and they can only digest about 24% of what they consume.</p>
+                <section>
+                    <h2 class="section-h2">Diet</h2>
+                    <p class="section-p">Despite being classified as carnivores, red pandas are primarily herbivorous. Their diet consists of about 95% bamboo (leaves and shoots), supplemented occasionally with fruits, berries, acorns, mushrooms, birds' eggs, insects, and small mammals. They have to eat 20-30% of their body weight daily (about 2-4 pounds of bamboo) because bamboo is so low in nutrients and they can only digest about 24% of what they consume.</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Fun Facts</h2>
+                <section>
+                    <h2 class="section-h2">Fun Facts</h2>
                     <ul style="line-height: 1.8; color: #333; padding-left: 25px;">
                         <li style="margin-bottom: 10px;">They have a "false thumb" (extended wrist bone) that helps them grip bamboo, evolved independently from giant pandas.</li>
                         <li style="margin-bottom: 10px;">Red pandas are crepuscular (most active at dawn and dusk) and spend up to 13 hours a day foraging for food.</li>
@@ -188,7 +120,8 @@
     </div>
     <footer>
         <p>&copy; 2026 Cristian Medina</p>
-        <a href="https://en.wikipedia.org/wiki/Red_panda" target="_blank" style="display: inline-block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent;">More About Red Panda</a>
+        <a href="https://en.wikipedia.org/wiki/Red_panda" target="_blank">More About Red Panda</a>
     </footer>
+    <script src="../../js/app.js"></script>
 </body>
 </html>

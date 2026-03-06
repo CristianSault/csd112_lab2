@@ -9,6 +9,7 @@
 <body>
     <header>
         <h1>AXOLOTL! 🐟✨</h1>
+        <button id="theme-btn">Dark Mode</button>
     </header>
     <nav id="mainNav">
         <ul style="list-style: none; margin: 0; padding: 0; display: flex; background-color: #f8f9fa;">
@@ -43,44 +44,6 @@
             </li>
         </ul>
     </nav>
-    <script>
-        const dropdown = document.getElementById('animalsDropdown');
-        const menu = document.getElementById('dropdownMenu');
-        
-        dropdown.addEventListener('mouseenter', function() {
-            menu.style.display = 'block';
-        });
-        
-        dropdown.addEventListener('mouseleave', function() {
-            menu.style.display = 'none';
-        });
-        
-        // Add hover effects to nav links
-        const navLinks = document.querySelectorAll('#mainNav ul > li > a');
-        navLinks.forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = '#e9ecef';
-                this.style.borderBottomColor = '#667eea';
-            });
-            link.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = 'transparent';
-                this.style.borderBottomColor = 'transparent';
-            });
-        });
-        
-        // Add hover effects to dropdown items
-        const dropdownLinks = document.querySelectorAll('#dropdownMenu a');
-        dropdownLinks.forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = '#f8f9fa';
-                this.style.paddingLeft = '25px';
-            });
-            link.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = '#fff';
-                this.style.paddingLeft = '20px';
-            });
-        });
-    </script>
     <div class="card">
         <main>
             <!-- Carousel -->
@@ -121,61 +84,30 @@
                     <span onclick="currentSlide(12)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
                 </div>
             </div>
-            <script>
-            let slideIndex = 1;
-            showSlide(slideIndex);
-
-            function changeSlide(n) {
-                showSlide(slideIndex += n);
-            }
-
-            function currentSlide(n) {
-                showSlide(slideIndex = n);
-            }
-
-            function showSlide(n) {
-                let images = document.querySelectorAll('div > img[id^="img"]');
-                let dots = document.querySelectorAll('div > div > span');
-                
-                if (n > images.length) { slideIndex = 1 }
-                if (n < 1) { slideIndex = images.length }
-                
-                for (let i = 0; i < images.length; i++) {
-                    images[i].style.display = "none";
-                }
-                
-                for (let i = 0; i < dots.length; i++) {
-                    dots[i].style.backgroundColor = "rgba(255,255,255,0.5)";
-                }
-                
-                images[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].style.backgroundColor = "#fff";
-            }
-            </script>
             <!-- Info -->
             <div style="max-width: 900px; margin: 0 auto; padding: 20px;">
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Scientific Name</h2>
-                    <p style="font-style: italic; font-size: 1.2em; color: #555; margin-bottom: 0;">Ambystoma mexicanum</p>
+                <section>
+                    <h2 class="section-h2">Scientific Name</h2>
+                    <p class="section-p">Ambystoma mexicanum</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Physiological Info</h2>
-                    <p style="line-height: 1.6; color: #333;">Axolotls are aquatic salamanders that typically measure 6-18 inches (15-45 cm) in length and weigh 2-8 ounces (60-225 grams). They exhibit neoteny, meaning they retain their larval features throughout their entire lives, including external feathery gills (three branches on each side of the head) and a dorsal fin that runs along their body. They have lidless eyes, a wide mouth that appears to be smiling, and four legs with slender digits. Wild axolotls are typically dark brown or black with goldish speckles, though captive-bred varieties come in white, golden albino, and other colors. They breathe through their gills, lungs, and skin simultaneously.</p>
+                <section>
+                    <h2 class="section-h2">Physiological Info</h2>
+                    <p class="section-p">Axolotls are aquatic salamanders that typically measure 6-18 inches (15-45 cm) in length and weigh 2-8 ounces (60-225 grams). They exhibit neoteny, meaning they retain their larval features throughout their entire lives, including external feathery gills (three branches on each side of the head) and a dorsal fin that runs along their body. They have lidless eyes, a wide mouth that appears to be smiling, and four legs with slender digits. Wild axolotls are typically dark brown or black with goldish speckles, though captive-bred varieties come in white, golden albino, and other colors. They breathe through their gills, lungs, and skin simultaneously.</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Natural Habitat</h2>
-                    <p style="line-height: 1.6; color: #333;">Axolotls are endemic to Lake Xochimilco and Lake Chalco in the Valley of Mexico, near Mexico City. Historically, they inhabited a network of lakes and wetlands in the region, but habitat loss has reduced their range dramatically. They prefer cool, high-altitude freshwater lakes and canals with temperatures around 60-64°F (16-18°C), abundant aquatic vegetation, and muddy bottoms. They're entirely aquatic and never naturally undergo metamorphosis to live on land. Sadly, they're critically endangered in the wild with potentially fewer than 1,000 individuals remaining.</p>
+                <section>
+                    <h2 class="section-h2">Natural Habitat</h2>
+                    <p class="section-p">Axolotls are endemic to Lake Xochimilco and Lake Chalco in the Valley of Mexico, near Mexico City. Historically, they inhabited a network of lakes and wetlands in the region, but habitat loss has reduced their range dramatically. They prefer cool, high-altitude freshwater lakes and canals with temperatures around 60-64°F (16-18°C), abundant aquatic vegetation, and muddy bottoms. They're entirely aquatic and never naturally undergo metamorphosis to live on land. Sadly, they're critically endangered in the wild with potentially fewer than 1,000 individuals remaining.</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Diet</h2>
-                    <p style="line-height: 1.6; color: #333;">Axolotls are carnivorous predators that primarily feed on small aquatic prey. In the wild, their diet includes mollusks, worms, insect larvae, crustaceans, small fish, and other small amphibians. They hunt by suction feeding—rapidly opening their mouths to create negative pressure that sucks prey in. They detect food through smell and lateral line sensors that pick up water vibrations. In captivity, they're commonly fed bloodworms, brine shrimp, earthworms, and specially formulated pellets. They have relatively slow metabolisms and can survive weeks without food if necessary.</p>
+                <section>
+                    <h2 class="section-h2">Diet</h2>
+                    <p class="section-p">Axolotls are carnivorous predators that primarily feed on small aquatic prey. In the wild, their diet includes mollusks, worms, insect larvae, crustaceans, small fish, and other small amphibians. They hunt by suction feeding—rapidly opening their mouths to create negative pressure that sucks prey in. They detect food through smell and lateral line sensors that pick up water vibrations. In captivity, they're commonly fed bloodworms, brine shrimp, earthworms, and specially formulated pellets. They have relatively slow metabolisms and can survive weeks without food if necessary.</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Fun Facts</h2>
+                <section>
+                    <h2 class="section-h2">Fun Facts</h2>
                     <ul style="line-height: 1.8; color: #333; padding-left: 25px;">
                         <li style="margin-bottom: 10px;">They have extraordinary regenerative abilities—they can regrow entire limbs, portions of their heart, spine, brain, and eyes without scarring, multiple times throughout their life</li>
                         <li style="margin-bottom: 10px;">If you transplant organs or tissue from one axolotl to another, the tissue will integrate and function normally</li>
@@ -190,7 +122,8 @@
     </div>
     <footer>
         <p>&copy; 2026 Cristian Medina</p>
-        <a href="https://en.wikipedia.org/wiki/Axolotl" target="_blank" style="display: inline-block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent;">More About Axolotl</a>
+        <a href="https://en.wikipedia.org/wiki/Axolotl" target="_blank">More About Axolotl</a>
     </footer>
+    <script src="../../js/app.js"></script>
 </body>
 </html>

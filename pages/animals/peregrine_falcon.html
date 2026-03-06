@@ -9,6 +9,7 @@
 <body>
     <header>
         <h1>PEREGRINE FALCON! 🦅</h1>
+        <button id="theme-btn">Dark Mode</button>
     </header>
     <nav id="mainNav">
         <ul style="list-style: none; margin: 0; padding: 0; display: flex; background-color: #f8f9fa;">
@@ -43,44 +44,6 @@
             </li>
         </ul>
     </nav>
-    <script>
-        const dropdown = document.getElementById('animalsDropdown');
-        const menu = document.getElementById('dropdownMenu');
-        
-        dropdown.addEventListener('mouseenter', function() {
-            menu.style.display = 'block';
-        });
-        
-        dropdown.addEventListener('mouseleave', function() {
-            menu.style.display = 'none';
-        });
-        
-        // Add hover effects to nav links
-        const navLinks = document.querySelectorAll('#mainNav ul > li > a');
-        navLinks.forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = '#e9ecef';
-                this.style.borderBottomColor = '#667eea';
-            });
-            link.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = 'transparent';
-                this.style.borderBottomColor = 'transparent';
-            });
-        });
-        
-        // Add hover effects to dropdown items
-        const dropdownLinks = document.querySelectorAll('#dropdownMenu a');
-        dropdownLinks.forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = '#f8f9fa';
-                this.style.paddingLeft = '25px';
-            });
-            link.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = '#fff';
-                this.style.paddingLeft = '20px';
-            });
-        });
-    </script>
     <div class="card">
         <main>
             <!-- Carousel -->
@@ -121,61 +84,30 @@
                     <span onclick="currentSlide(12)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
                 </div>
             </div>
-            <script>
-            let slideIndex = 1;
-            showSlide(slideIndex);
-
-            function changeSlide(n) {
-                showSlide(slideIndex += n);
-            }
-
-            function currentSlide(n) {
-                showSlide(slideIndex = n);
-            }
-
-            function showSlide(n) {
-                let images = document.querySelectorAll('div > img[id^="img"]');
-                let dots = document.querySelectorAll('div > div > span');
-                
-                if (n > images.length) { slideIndex = 1 }
-                if (n < 1) { slideIndex = images.length }
-                
-                for (let i = 0; i < images.length; i++) {
-                    images[i].style.display = "none";
-                }
-                
-                for (let i = 0; i < dots.length; i++) {
-                    dots[i].style.backgroundColor = "rgba(255,255,255,0.5)";
-                }
-                
-                images[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].style.backgroundColor = "#fff";
-            }
-            </script>
             <!-- Info -->
             <div style="max-width: 900px; margin: 0 auto; padding: 20px;">
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Scientific Name</h2>
-                    <p style="font-style: italic; font-size: 1.2em; color: #555; margin-bottom: 0;">Falco peregrinus</p>
+                <section>
+                    <h2 class="section-h2">Scientific Name</h2>
+                    <p class="section-p">Falco peregrinus</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Physiological Info</h2>
-                    <p style="line-height: 1.6; color: #333;">Peregrine falcons are medium-sized raptors measuring 14-19 inches (36-49 cm) in length with a wingspan of 3.3-3.6 feet (100-110 cm). Females are notably larger than males, weighing 1.5-3.3 pounds (0.7-1.5 kg) compared to males at 1-1.5 pounds (0.4-0.75 kg). They have slate-blue to black plumage on their backs, barred white underparts, a white throat, and distinctive black "mustache" markings on their face. Their aerodynamic body features long, pointed wings, a relatively short tail, and powerful chest muscles. They possess incredibly sharp vision (estimated to be 8 times better than humans), a specialized third eyelid for protection during high-speed dives, and specialized nasal baffles that regulate airflow and prevent lung damage during extreme velocity dives.</p>
+                <section>
+                    <h2 class="section-h2">Physiological Info</h2>
+                    <p class="section-p">Peregrine falcons are medium-sized raptors measuring 14-19 inches (36-49 cm) in length with a wingspan of 3.3-3.6 feet (100-110 cm). Females are notably larger than males, weighing 1.5-3.3 pounds (0.7-1.5 kg) compared to males at 1-1.5 pounds (0.4-0.75 kg). They have slate-blue to black plumage on their backs, barred white underparts, a white throat, and distinctive black "mustache" markings on their face. Their aerodynamic body features long, pointed wings, a relatively short tail, and powerful chest muscles. They possess incredibly sharp vision (estimated to be 8 times better than humans), a specialized third eyelid for protection during high-speed dives, and specialized nasal baffles that regulate airflow and prevent lung damage during extreme velocity dives.</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Natural Habitat</h2>
-                    <p style="line-height: 1.6; color: #333;">Peregrine falcons are found on every continent except Antarctica, making them one of the most widespread bird species in the world. They inhabit diverse environments including coastal cliffs, mountain ranges, river valleys, tundra, and increasingly, urban cityscapes where skyscrapers mimic natural cliff faces. They prefer open areas with high perches for hunting and nest on cliff ledges, building ledges, or other high structures. They can be found from sea level to elevations exceeding 13,000 feet (4,000 meters). While some populations are resident year-round, others are long-distance migrants, with Arctic populations traveling up to 15,500 miles (25,000 km) annually.</p>
+                <section>
+                    <h2 class="section-h2">Natural Habitat</h2>
+                    <p class="section-p">Peregrine falcons are found on every continent except Antarctica, making them one of the most widespread bird species in the world. They inhabit diverse environments including coastal cliffs, mountain ranges, river valleys, tundra, and increasingly, urban cityscapes where skyscrapers mimic natural cliff faces. They prefer open areas with high perches for hunting and nest on cliff ledges, building ledges, or other high structures. They can be found from sea level to elevations exceeding 13,000 feet (4,000 meters). While some populations are resident year-round, others are long-distance migrants, with Arctic populations traveling up to 15,500 miles (25,000 km) annually.</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Diet</h2>
-                    <p style="line-height: 1.6; color: #333;">Peregrine falcons are specialized bird hunters, with their diet consisting of approximately 90% other birds. They prey on medium-sized birds such as pigeons, doves, waterfowl, shorebirds, songbirds, and even other raptors. Occasionally they hunt bats, and rarely small terrestrial mammals. They hunt primarily using their spectacular hunting dive (stoop), where they spot prey from great heights, fold their wings, and plummet at extreme speeds to strike prey mid-flight with their talons clenched into fists. The impact alone can kill or stun the prey, which they then catch in the air or retrieve from the ground. They typically consume 2-3 ounces (60-90 grams) of food per day.</p>
+                <section>
+                    <h2 class="section-h2">Diet</h2>
+                    <p class="section-p">Peregrine falcons are specialized bird hunters, with their diet consisting of approximately 90% other birds. They prey on medium-sized birds such as pigeons, doves, waterfowl, shorebirds, songbirds, and even other raptors. Occasionally they hunt bats, and rarely small terrestrial mammals. They hunt primarily using their spectacular hunting dive (stoop), where they spot prey from great heights, fold their wings, and plummet at extreme speeds to strike prey mid-flight with their talons clenched into fists. The impact alone can kill or stun the prey, which they then catch in the air or retrieve from the ground. They typically consume 2-3 ounces (60-90 grams) of food per day.</p>
                 </section>
 
-                <section style="background-color: rgba(255, 255, 255, 0.9); padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h2 style="color: #d32f2f; margin-top: 0; border-bottom: 3px solid #d32f2f; padding-bottom: 10px;">Fun Facts</h2>
+                <section>
+                    <h2 class="section-h2">Fun Facts</h2>
                     <ul style="line-height: 1.8; color: #333; padding-left: 25px;">
                         <li style="margin-bottom: 10px;">They're the fastest animals on Earth, reaching speeds over 240 mph (386 km/h) during their hunting dive (stoop), with some estimates as high as 242 mph</li>
                         <li style="margin-bottom: 10px;">At maximum diving speed, they experience forces exceeding 25 G's and the impact force when striking prey is comparable to being hit by a small car</li>
@@ -191,7 +123,8 @@
     </div>
     <footer>
         <p>&copy; 2026 Cristian Medina</p>
-        <a href="https://en.wikipedia.org/wiki/Peregrine_Falcon" target="_blank" style="display: inline-block; padding: 15px 25px; text-decoration: none; color: #333; border-bottom: 3px solid transparent;">More About Peregrine Falcon</a>
+        <a href="https://en.wikipedia.org/wiki/Peregrine_Falcon" target="_blank">More About Peregrine Falcon</a>
     </footer>
+    <script src="../../js/app.js"></script>
 </body>
 </html>
