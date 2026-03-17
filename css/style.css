@@ -8,6 +8,11 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+header {
+    display:flexbox;
+    flex-direction: row;
+}
+
 nav {
     background-color: #fff; 
     padding: 20px; 
@@ -344,7 +349,80 @@ section {
 }
 
 footer {
+    display: flexbox;
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sec-info {
+  background: #e6f1fb;
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.sec-info h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #185fa5;
+}
+.sec-info p {
+  margin: 0;
+  font-size: 13px;
+  color: #185fa5;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* Base button — apply to all variants */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn:active {
+  transform: scale(0.97);
+}
+.btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(128, 128, 128, 0.25);
+}
+.btn-outline {
+  background: transparent;
+  color: #111;
+  border: 0.5px solid rgba(0, 0, 0, 0.35);
+}
+.btn-outline:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+#theme-btn {
+  border-radius: 999px;
+  padding: 8px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  justify-items: right;
+  position: relative;
+}
+
+#secret-btn {
+  background: transparent;
+  color: #666;
+  border: none;
+  padding: 9px 14px;
+}
+.secret-btn:hover {
+  color: #111;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 #secret-box {

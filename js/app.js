@@ -101,3 +101,26 @@ function showSecret(){
 }
 
 secretBtn.addEventListener("click", showSecret);
+
+let vipAnimals = ["capybara", "red panda", "octopus", "redpanda"];
+let vipInput = document.getElementById("nInpTxt");
+let vipTitle = document.getElementById("nH3");
+let vipBtn = document.getElementById("nBtn");
+let vipMsg = document.getElementById("nMsgP");
+
+function verifyAccess(){
+    let userInp = vipInput.value.toLowerCase();
+    if (userInp === "") {
+        vipMsg.innerText = "Error! Please type something valid.";
+        vipMsg.style.color = "red";
+    } else if (vipAnimals.includes(userInp)) {
+    // I wonder if "userInp in vipAnimals.values" would work too...
+        vipMsg.innerText = "Access Granted!";
+        vipMsg.style.color = "green";
+    } else {
+        vipMsg.innerText = "Wrong entry. Access denied.";
+        vipMsg.style.color = "red";
+    }
+}
+
+vipBtn.addEventListener("click", verifyAccess);
