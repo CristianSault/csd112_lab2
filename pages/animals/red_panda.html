@@ -45,7 +45,7 @@
         </ul>
     </nav>
     <div class="card">
-        <main>
+        <main style="position: relative;">
             <!-- Carousel -->
             <div style="position: relative; max-width: 800px; margin: 20px auto; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
                 <!-- Images -->
@@ -58,11 +58,10 @@
                 <img id="img7" src="../../images/red_panda/panda6.jpg" alt="Image 7" style="width: 100%; display: none;">
                 <img id="img8" src="../../images/red_panda/panda7.webp" alt="Image 8" style="width: 100%; display: none;">
                 <img id="img9" src="../../images/red_panda/panda_parenting.webp" alt="Image 9" style="width: 100%; display: none;">
-
                 
                 <!-- Previous Button -->
                 <button onclick="changeSlide(-1)" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; font-size: 24px; cursor: pointer; border-radius: 5px;">❮</button>
-                
+            
                 <!-- Next Button -->
                 <button onclick="changeSlide(1)" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; font-size: 24px; cursor: pointer; border-radius: 5px;">❯</button>
                 
@@ -112,9 +111,12 @@
                     </ul>
                 </section>
             </div>
-            <aside margin="10px, 0, 5px, 30px">
+            <aside style="margin: 10px, 0, 5px, 30px; position: relative; display:flexbox; justify-items: right;">
+                <div id="content-grid" class="grid-layout"> 
+                    
+                </div>
                 <h3>Extra Facts</h3>
-                <img id="extra_img" src="..\..\images\red_panda\red_panda_facts!.jpg" alt="Red Panda Facts" style="width: 70%; display: none;">
+                <img id="extra_img" src="..\..\images\red_panda\red_panda_facts!.jpg" alt="Red Panda Facts" style="width: 40%; display: block;">
             </aside>
         </main>
     </div>
