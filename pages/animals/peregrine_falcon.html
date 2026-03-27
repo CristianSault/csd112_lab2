@@ -9,6 +9,7 @@
 <body>
     <header>
         <h1>PEREGRINE FALCON! 🦅</h1>
+        <button id="theme-btn">Dark Mode</button>
     </header>
     <nav>
         <ul>
@@ -43,153 +44,87 @@
             </li>
         </ul>
     </nav>
-    <script>
-        const dropdown = document.getElementById('animalsDropdown');
-        const menu = document.getElementById('dropdownMenu');
-        
-        dropdown.addEventListener('mouseenter', function() {
-            menu.style.display = 'block';
-        });
-        
-        dropdown.addEventListener('mouseleave', function() {
-            menu.style.display = 'none';
-        });
-        
-        // Add hover effects to nav links
-        const navLinks = document.querySelectorAll('#mainNav ul > li > a');
-        navLinks.forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = '#e9ecef';
-                this.style.borderBottomColor = '#667eea';
-            });
-            link.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = 'transparent';
-                this.style.borderBottomColor = 'transparent';
-            });
-        });
-        
-        // Add hover effects to dropdown items
-        const dropdownLinks = document.querySelectorAll('#dropdownMenu a');
-        dropdownLinks.forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = '#f8f9fa';
-                this.style.paddingLeft = '25px';
-            });
-            link.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = '#fff';
-                this.style.paddingLeft = '20px';
-            });
-        });
-    </script>
-    <main class="outsideCard">
-        <!-- Carousel -->
-        <div class="gallery">
-            <!-- Images -->
-            <img id="img1" src="..\..\images\peregrine_falcon\falco3.webp" alt="Image 1">
-            <img id="img2" src="..\..\images\peregrine_falcon\falco1.webp" alt="Image 2">
-            <img id="img3" src="..\..\images\peregrine_falcon\falco2.jpeg" alt="Image 3">
-            <img id="img4" src="..\..\images\peregrine_falcon\falco6.jpg" alt="Image 4">
-            <img id="img5" src="..\..\images\peregrine_falcon\falco4.webp" alt="Image 5">
-            <img id="img6" src="..\..\images\peregrine_falcon\falco5.avif" alt="Image 6">
-            <img id="img7" src="..\..\images\peregrine_falcon\falco_fly1.jpg" alt="Image 7">
-            <img id="img8" src="..\..\images\peregrine_falcon\falco_fly2.jpg" alt="Image 8">
-            <img id="img9" src="..\..\images\peregrine_falcon\falco_fly3.jpg" alt="Image 9">
-            <img id="img10" src="..\..\images\peregrine_falcon\falco_fly4.jpg" alt="Image 10">
-            <img id="img11" src="..\..\images\peregrine_falcon\falco_fly5.jpg" alt="Image 11">
-            <img id="img12" src="..\..\images\peregrine_falcon\falco_fly6.webp" alt="Image 12">
-            
-            <!-- Previous Button -->
-            <button onclick="changeSlide(-1)" id="prev_button">❮</button>
-            
-            <!-- Next Button -->
-            <button onclick="changeSlide(1)" id="next_button">❯</button>
-            
-            <!-- Dots/Indicators -->
-            <div id="dots">
-                <span onclick="currentSlide(1)"></span>
-                <span onclick="currentSlide(2)"></span>
-                <span onclick="currentSlide(3)"></span>
-                <span onclick="currentSlide(4)"></span>
-                <span onclick="currentSlide(5)"></span>
-                <span onclick="currentSlide(6)"></span>
-                <span onclick="currentSlide(7)"></span>
-                <span onclick="currentSlide(8)"></span>
-                <span onclick="currentSlide(9)"></span>
-                <span onclick="currentSlide(10)"></span>
-                <span onclick="currentSlide(11)"></span>
-                <span onclick="currentSlide(12)"></span>
+    <div class="card">
+        <main>
+            <!-- Carousel -->
+            <div style="position: relative; max-width: 800px; margin: 20px auto; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                <!-- Images -->
+                <img id="img1" src="..\..\images\peregrine_falcon\falco3.webp" alt="Image 1" style="width: 100%; display: block;">
+                <img id="img2" src="..\..\images\peregrine_falcon\falco1.webp" alt="Image 2" style="width: 100%; display: none;">
+                <img id="img3" src="..\..\images\peregrine_falcon\falco2.jpeg" alt="Image 3" style="width: 100%; display: none;">
+                <img id="img4" src="..\..\images\peregrine_falcon\falco6.jpg" alt="Image 4" style="width: 100%; display: none;">
+                <img id="img5" src="..\..\images\peregrine_falcon\falco4.webp" alt="Image 5" style="width: 100%; display: none;">
+                <img id="img6" src="..\..\images\peregrine_falcon\falco5.avif" alt="Image 6" style="width: 100%; display: none;">
+                <img id="img7" src="..\..\images\peregrine_falcon\falco_fly1.jpg" alt="Image 7" style="width: 100%; display: none;">
+                <img id="img8" src="..\..\images\peregrine_falcon\falco_fly2.jpg" alt="Image 8" style="width: 100%; display: none;">
+                <img id="img9" src="..\..\images\peregrine_falcon\falco_fly3.jpg" alt="Image 9" style="width: 100%; display: none;">
+                <img id="img10" src="..\..\images\peregrine_falcon\falco_fly4.jpg" alt="Image 10" style="width: 100%; display: none;">
+                <img id="img11" src="..\..\images\peregrine_falcon\falco_fly5.jpg" alt="Image 11" style="width: 100%; display: none;">
+                <img id="img12" src="..\..\images\peregrine_falcon\falco_fly6.webp" alt="Image 12" style="width: 100%; display: none;">
+                
+                <!-- Previous Button -->
+                <button onclick="changeSlide(-1)" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; font-size: 24px; cursor: pointer; border-radius: 5px;">❮</button>
+                
+                <!-- Next Button -->
+                <button onclick="changeSlide(1)" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; font-size: 24px; cursor: pointer; border-radius: 5px;">❯</button>
+                
+                <!-- Dots/Indicators -->
+                <div style="text-align: center; padding: 15px 0; position: absolute; bottom: 0; width: 100%;">
+                    <span onclick="currentSlide(1)" style="height: 12px; width: 12px; margin: 0 5px; background-color: #fff; border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(2)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(3)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(4)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(5)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(6)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(7)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(8)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(9)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(10)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(11)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(12)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                </div>
             </div>
-        </div>
-        <script>
-        let slideIndex = 1;
-        showSlide(slideIndex);
+            <!-- Info -->
+            <div style="max-width: 900px; margin: 0 auto; padding: 20px;">
+                <section>
+                    <h2 class="section-h2">Scientific Name</h2>
+                    <p class="section-p">Falco peregrinus</p>
+                </section>
 
-        function changeSlide(n) {
-            showSlide(slideIndex += n);
-        }
+                <section>
+                    <h2 class="section-h2">Physiological Info</h2>
+                    <p class="section-p">Peregrine falcons are medium-sized raptors measuring 14-19 inches (36-49 cm) in length with a wingspan of 3.3-3.6 feet (100-110 cm). Females are notably larger than males, weighing 1.5-3.3 pounds (0.7-1.5 kg) compared to males at 1-1.5 pounds (0.4-0.75 kg). They have slate-blue to black plumage on their backs, barred white underparts, a white throat, and distinctive black "mustache" markings on their face. Their aerodynamic body features long, pointed wings, a relatively short tail, and powerful chest muscles. They possess incredibly sharp vision (estimated to be 8 times better than humans), a specialized third eyelid for protection during high-speed dives, and specialized nasal baffles that regulate airflow and prevent lung damage during extreme velocity dives.</p>
+                </section>
 
-        function currentSlide(n) {
-            showSlide(slideIndex = n);
-        }
+                <section>
+                    <h2 class="section-h2">Natural Habitat</h2>
+                    <p class="section-p">Peregrine falcons are found on every continent except Antarctica, making them one of the most widespread bird species in the world. They inhabit diverse environments including coastal cliffs, mountain ranges, river valleys, tundra, and increasingly, urban cityscapes where skyscrapers mimic natural cliff faces. They prefer open areas with high perches for hunting and nest on cliff ledges, building ledges, or other high structures. They can be found from sea level to elevations exceeding 13,000 feet (4,000 meters). While some populations are resident year-round, others are long-distance migrants, with Arctic populations traveling up to 15,500 miles (25,000 km) annually.</p>
+                </section>
 
-        function showSlide(n) {
-            let images = document.querySelectorAll('div > img[id^="img"]');
-            let dots = document.querySelectorAll('div > div > span');
-            
-            if (n > images.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = images.length }
-            
-            for (let i = 0; i < images.length; i++) {
-                images[i].style.display = "none";
-            }
-            
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].style.backgroundColor = "rgba(255,255,255,0.5)";
-            }
-            
-            images[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].style.backgroundColor = "#fff";
-        }
-        </script>
-        <!-- Info -->
-        <div style="max-width: 900px; margin: 0 auto; padding: 20px;">
-            <section class="animal_info">
-                <h2 class="animal_h2">Scientific Name</h2>
-                <p id="scientific_name">Falco peregrinus</p>
-            </section>
+                <section>
+                    <h2 class="section-h2">Diet</h2>
+                    <p class="section-p">Peregrine falcons are specialized bird hunters, with their diet consisting of approximately 90% other birds. They prey on medium-sized birds such as pigeons, doves, waterfowl, shorebirds, songbirds, and even other raptors. Occasionally they hunt bats, and rarely small terrestrial mammals. They hunt primarily using their spectacular hunting dive (stoop), where they spot prey from great heights, fold their wings, and plummet at extreme speeds to strike prey mid-flight with their talons clenched into fists. The impact alone can kill or stun the prey, which they then catch in the air or retrieve from the ground. They typically consume 2-3 ounces (60-90 grams) of food per day.</p>
+                </section>
 
-            <section class="animal_info">
-                <h2 class="animal_h2">Physiological Info</h2>
-                <p class="animal_p">Peregrine falcons are medium-sized raptors measuring 14-19 inches (36-49 cm) in length with a wingspan of 3.3-3.6 feet (100-110 cm). Females are notably larger than males, weighing 1.5-3.3 pounds (0.7-1.5 kg) compared to males at 1-1.5 pounds (0.4-0.75 kg). They have slate-blue to black plumage on their backs, barred white underparts, a white throat, and distinctive black "mustache" markings on their face. Their aerodynamic body features long, pointed wings, a relatively short tail, and powerful chest muscles. They possess incredibly sharp vision (estimated to be 8 times better than humans), a specialized third eyelid for protection during high-speed dives, and specialized nasal baffles that regulate airflow and prevent lung damage during extreme velocity dives.</p>
-            </section>
-
-            <section class="animal_info">
-                <h2 class="animal_h2">Natural Habitat</h2>
-                <p class="animal_p">Peregrine falcons are found on every continent except Antarctica, making them one of the most widespread bird species in the world. They inhabit diverse environments including coastal cliffs, mountain ranges, river valleys, tundra, and increasingly, urban cityscapes where skyscrapers mimic natural cliff faces. They prefer open areas with high perches for hunting and nest on cliff ledges, building ledges, or other high structures. They can be found from sea level to elevations exceeding 13,000 feet (4,000 meters). While some populations are resident year-round, others are long-distance migrants, with Arctic populations traveling up to 15,500 miles (25,000 km) annually.</p>
-            </section>
-
-            <section class="animal_info">
-                <h2 class="animal_h2">Diet</h2>
-                <p class="animal_p">Peregrine falcons are specialized bird hunters, with their diet consisting of approximately 90% other birds. They prey on medium-sized birds such as pigeons, doves, waterfowl, shorebirds, songbirds, and even other raptors. Occasionally they hunt bats, and rarely small terrestrial mammals. They hunt primarily using their spectacular hunting dive (stoop), where they spot prey from great heights, fold their wings, and plummet at extreme speeds to strike prey mid-flight with their talons clenched into fists. The impact alone can kill or stun the prey, which they then catch in the air or retrieve from the ground. They typically consume 2-3 ounces (60-90 grams) of food per day.</p>
-            </section>
-
-            <section class="animal_info">
-                <h2 class="animal_h2">Fun Facts</h2>
-                <ul style="line-height: 1.8; color: #333; padding-left: 25px;">
-                    <li style="margin-bottom: 10px;">They're the fastest animals on Earth, reaching speeds over 240 mph (386 km/h) during their hunting dive (stoop), with some estimates as high as 242 mph</li>
-                    <li style="margin-bottom: 10px;">At maximum diving speed, they experience forces exceeding 25 G's and the impact force when striking prey is comparable to being hit by a small car</li>
-                    <li style="margin-bottom: 10px;">They were nearly driven to extinction in North America during the mid-20th century due to DDT pesticide contamination, which caused eggshell thinning, but have made a remarkable recovery through conservation efforts</li>
-                    <li style="margin-bottom: 10px;">The name "peregrine" comes from Latin meaning "wanderer" or "pilgrim," referring to their long-distance migrations</li>
-                    <li style="margin-bottom: 10px;">They can live 15-20 years in the wild, though the record is over 25 years</li>
-                    <li style="margin-bottom: 10px;">They have successfully adapted to urban environments, hunting pigeons and nesting on skyscrapers and bridges in major cities worldwide</li>
-                    <li style="margin-bottom: 10px;">During courtship, males perform spectacular aerial displays including high-speed dives, loops, and "sky dancing" while calling loudly</li>
-                </ul>
-            </section>
-        </div>
-    </main>
+                <section>
+                    <h2 class="section-h2">Fun Facts</h2>
+                    <ul style="line-height: 1.8; color: #333; padding-left: 25px;">
+                        <li style="margin-bottom: 10px;">They're the fastest animals on Earth, reaching speeds over 240 mph (386 km/h) during their hunting dive (stoop), with some estimates as high as 242 mph</li>
+                        <li style="margin-bottom: 10px;">At maximum diving speed, they experience forces exceeding 25 G's and the impact force when striking prey is comparable to being hit by a small car</li>
+                        <li style="margin-bottom: 10px;">They were nearly driven to extinction in North America during the mid-20th century due to DDT pesticide contamination, which caused eggshell thinning, but have made a remarkable recovery through conservation efforts</li>
+                        <li style="margin-bottom: 10px;">The name "peregrine" comes from Latin meaning "wanderer" or "pilgrim," referring to their long-distance migrations</li>
+                        <li style="margin-bottom: 10px;">They can live 15-20 years in the wild, though the record is over 25 years</li>
+                        <li style="margin-bottom: 10px;">They have successfully adapted to urban environments, hunting pigeons and nesting on skyscrapers and bridges in major cities worldwide</li>
+                        <li style="margin-bottom: 10px;">During courtship, males perform spectacular aerial displays including high-speed dives, loops, and "sky dancing" while calling loudly</li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
     <footer>
         <p>&copy; 2026 Cristian Medina</p>
         <a href="https://en.wikipedia.org/wiki/Peregrine_Falcon" target="_blank">More About Peregrine Falcon</a>
     </footer>
+    <script src="../../js/app.js"></script>
 </body>
 </html>

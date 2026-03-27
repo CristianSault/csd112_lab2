@@ -9,6 +9,7 @@
 <body>
     <header>
         <h1>FOX! 🦊</h1>
+        <button id="theme-btn">Dark Mode</button>
     </header>
     <nav>
         <ul>
@@ -43,149 +44,81 @@
             </li>
         </ul>
     </nav>
-    <script>
-        const dropdown = document.getElementById('animalsDropdown');
-        const menu = document.getElementById('dropdownMenu');
-        
-        dropdown.addEventListener('mouseenter', function() {
-            menu.style.display = 'block';
-        });
-        
-        dropdown.addEventListener('mouseleave', function() {
-            menu.style.display = 'none';
-        });
-        
-        // Add hover effects to nav links
-        const navLinks = document.querySelectorAll('#mainNav ul > li > a');
-        navLinks.forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = '#e9ecef';
-                this.style.borderBottomColor = '#667eea';
-            });
-            link.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = 'transparent';
-                this.style.borderBottomColor = 'transparent';
-            });
-        });
-        
-        // Add hover effects to dropdown items
-        const dropdownLinks = document.querySelectorAll('#dropdownMenu a');
-        dropdownLinks.forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = '#f8f9fa';
-                this.style.paddingLeft = '25px';
-            });
-            link.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = '#fff';
-                this.style.paddingLeft = '20px';
-            });
-        });
-    </script>
-    <main class="outsideCard">
-        <!-- Carousel -->
-        <div class="gallery">
-            <!-- Images -->
-            <img id="img1" src="..\..\images\fox\chill_fox.jpg" alt="Image 1">
-            <img id="img2" src="..\..\images\fox\sitting_fox.jpg" alt="Image 2">
-            <img id="img3" src="..\..\images\fox\fox_eye_contact.webp" alt="Image 3">
-            <img id="img4" src="..\..\images\fox\fox1.webp" alt="Image 4">
-            <img id="img5" src="..\..\images\fox\fox_camo.jpg" alt="Image 5">
-            <img id="img6" src="..\..\images\fox\fox2.jpg" alt="Image 6">
-            <img id="img7" src="..\..\images\fox\sleeping_fox.jpg" alt="Image 7">
-            <img id="img8" src="..\..\images\fox\sleeping_foxes.jpg" alt="Image 8">
-            <img id="img9" src="..\..\images\fox\baby_fox1.jpg" alt="Image 9">
-            <img id="img10" src="..\..\images\fox\baby_fox2.jpg" alt="Image 10">
-            <img id="img11" src="..\..\images\fox\baby_foxes.jpg" alt="Image 11">
-            <img id="img12" src="..\..\images\fox\baby_foxes2.jpg" alt="Image 12">
-            
-            <!-- Previous Button -->
-            <button onclick="changeSlide(-1)" id="prev_button">❮</button>
-            
-            <!-- Next Button -->
-            <button onclick="changeSlide(1)" id="next_button">❯</button>
-            
-            <!-- Dots/Indicators -->
-            <div id="dots">
-                <span onclick="currentSlide(1)"></span>
-                <span onclick="currentSlide(2)"></span>
-                <span onclick="currentSlide(3)"></span>
-                <span onclick="currentSlide(4)"></span>
-                <span onclick="currentSlide(5)"></span>
-                <span onclick="currentSlide(6)"></span>
-                <span onclick="currentSlide(7)"></span>
-                <span onclick="currentSlide(8)"></span>
-                <span onclick="currentSlide(9)"></span>
-                <span onclick="currentSlide(10)"></span>
-                <span onclick="currentSlide(11)"></span>
-                <span onclick="currentSlide(12)"></span>
+    <div class="card">
+        <main>
+            <!-- Carousel -->
+            <div style="position: relative; max-width: 800px; margin: 20px auto; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                <!-- Images -->
+                <img id="img1" src="..\..\images\fox\chill_fox.jpg" alt="Image 1" style="width: 100%; display: block;">
+                <img id="img2" src="..\..\images\fox\sitting_fox.jpg" alt="Image 2" style="width: 100%; display: none;">
+                <img id="img3" src="..\..\images\fox\fox_eye_contact.webp" alt="Image 3" style="width: 100%; display: none;">
+                <img id="img4" src="..\..\images\fox\fox1.webp" alt="Image 4" style="width: 100%; display: none;">
+                <img id="img5" src="..\..\images\fox\fox_camo.jpg" alt="Image 5" style="width: 100%; display: none;">
+                <img id="img6" src="..\..\images\fox\fox2.jpg" alt="Image 6" style="width: 100%; display: none;">
+                <img id="img7" src="..\..\images\fox\sleeping_fox.jpg" alt="Image 7" style="width: 100%; display: none;">
+                <img id="img8" src="..\..\images\fox\sleeping_foxes.jpg" alt="Image 8" style="width: 100%; display: none;">
+                <img id="img9" src="..\..\images\fox\baby_fox1.jpg" alt="Image 9" style="width: 100%; display: none;">
+                <img id="img10" src="..\..\images\fox\baby_fox2.jpg" alt="Image 10" style="width: 100%; display: none;">
+                <img id="img11" src="..\..\images\fox\baby_foxes.jpg" alt="Image 11" style="width: 100%; display: none;">
+                <img id="img12" src="..\..\images\fox\baby_foxes2.jpg" alt="Image 12" style="width: 100%; display: none;">
+                
+                <!-- Previous Button -->
+                <button onclick="changeSlide(-1)" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; font-size: 24px; cursor: pointer; border-radius: 5px;">❮</button>
+                
+                <!-- Next Button -->
+                <button onclick="changeSlide(1)" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; font-size: 24px; cursor: pointer; border-radius: 5px;">❯</button>
+                
+                <!-- Dots/Indicators -->
+                <div style="text-align: center; padding: 15px 0; position: absolute; bottom: 0; width: 100%;">
+                    <span onclick="currentSlide(1)" style="height: 12px; width: 12px; margin: 0 5px; background-color: #fff; border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(2)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(3)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(4)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(5)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(6)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(7)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(8)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(9)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(10)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(11)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                    <span onclick="currentSlide(12)" style="height: 12px; width: 12px; margin: 0 5px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></span>
+                </div>
             </div>
-        </div>
-        <script>
-        let slideIndex = 1;
-        showSlide(slideIndex);
+            <!-- Info -->
+            <div style="max-width: 900px; margin: 0 auto; padding: 20px;">
+                <section>
+                    <h2 class="section-h2">Scientific Name</h2>
+                    <p class="section-p">Vulpes vulpes</p>
+                </section>
 
-        function changeSlide(n) {
-            showSlide(slideIndex += n);
-        }
+                <section>
+                    <h2 class="section-h2">Physiological Info</h2>
+                    <p class="section-p">Red foxes typically measure 18-35 inches (45-90 cm) in body length, plus a 12-22 inch (30-56 cm) bushy tail, and weigh 6.5-24 pounds (3-11 kg), with males being slightly larger. They have slender, elongated bodies with relatively short legs, pointed muzzles, large upright triangular ears, and distinctive bushy tails (called "brushes"). Their fur is typically reddish-orange on top with white undersides, black legs and ear tips, though color variations include silver, black, and cross patterns.  Foxes have excellent hearing, sharp vision adapted for low light, whiskers for navigation, and a keen sense of smell.</p>
+                </section>
 
-        function currentSlide(n) {
-            showSlide(slideIndex = n);
-        }
+                <section>
+                    <h2 class="section-h2">Natural Habitat</h2>
+                    <p class="section-p">Red foxes have the widest distribution of any carnivore, found across the Northern Hemisphere including North America, Europe, Asia, and introduced to Australia. They're incredibly adaptable, inhabiting forests, grasslands, mountains, deserts, farmlands, and urban areas. They prefer edge habitats where different environments meet, providing diverse hunting opportunities. Foxes create dens (also called "earths") in underground burrows, which they dig themselves or take over from other animals, using them for shelter and raising young.</p>
+                </section>
 
-        function showSlide(n) {
-            let images = document.querySelectorAll('div > img[id^="img"]');
-            let dots = document.querySelectorAll('div > div > span');
-            
-            if (n > images.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = images.length }
-            
-            for (let i = 0; i < images.length; i++) {
-                images[i].style.display = "none";
-            }
-            
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].style.backgroundColor = "rgba(255,255,255,0.5)";
-            }
-            
-            images[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].style.backgroundColor = "#fff";
-        }
-        </script>
-        <!-- Info -->
-        <div style="max-width: 900px; margin: 0 auto; padding: 20px;">
-            <section class="animal_info">
-                <h2 class="animal_h2">Scientific Name</h2>
-                <p id="scientific_name">Vulpes vulpes</p>
-            </section>
+                <section>
+                    <h2 class="section-h2">Diet</h2>
+                    <p class="section-p">Foxes are opportunistic omnivores with highly varied diets. Red foxes primarily eat small mammals (mice, voles, rabbits, squirrels), birds and their eggs, insects, earthworms, and fruits (especially berries, apples). They also scavenge carrion and human food waste in urban areas. Foxes cache (bury) excess food for later consumption. They typically consume about 1-2 pounds (0.5-1 kg) of food daily. Their hunting technique often involves "mousing"—they use their acute hearing to locate prey under snow or soil, then leap high and pounce with their front paws.</p>
+                </section>
 
-            <section class="animal_info">
-                <h2 class="animal_h2">Physiological Info</h2>
-                <p class="animal_p">Red foxes typically measure 18-35 inches (45-90 cm) in body length, plus a 12-22 inch (30-56 cm) bushy tail, and weigh 6.5-24 pounds (3-11 kg), with males being slightly larger. They have slender, elongated bodies with relatively short legs, pointed muzzles, large upright triangular ears, and distinctive bushy tails (called "brushes"). Their fur is typically reddish-orange on top with white undersides, black legs and ear tips, though color variations include silver, black, and cross patterns.  Foxes have excellent hearing, sharp vision adapted for low light, whiskers for navigation, and a keen sense of smell.</p>
-            </section>
-
-            <section class="animal_info">
-                <h2 class="animal_h2">Natural Habitat</h2>
-                <p class="animal_p">Red foxes have the widest distribution of any carnivore, found across the Northern Hemisphere including North America, Europe, Asia, and introduced to Australia. They're incredibly adaptable, inhabiting forests, grasslands, mountains, deserts, farmlands, and urban areas. They prefer edge habitats where different environments meet, providing diverse hunting opportunities. Foxes create dens (also called "earths") in underground burrows, which they dig themselves or take over from other animals, using them for shelter and raising young.</p>
-            </section>
-
-            <section class="animal_info">
-                <h2 class="animal_h2">Diet</h2>
-                <p class="animal_p">Foxes are opportunistic omnivores with highly varied diets. Red foxes primarily eat small mammals (mice, voles, rabbits, squirrels), birds and their eggs, insects, earthworms, and fruits (especially berries, apples). They also scavenge carrion and human food waste in urban areas. Foxes cache (bury) excess food for later consumption. They typically consume about 1-2 pounds (0.5-1 kg) of food daily. Their hunting technique often involves "mousing"—they use their acute hearing to locate prey under snow or soil, then leap high and pounce with their front paws.</p>
-            </section>
-
-            <section class="animal_info">
-                <h2 class="animal_h2">Fun Facts</h2>
-                <ul style="line-height: 1.8; color: #333; padding-left: 25px;">
-                    <li style="margin-bottom: 10px;">Foxes use Earth's magnetic field to hunt, detecting the field to triangulate prey hidden beneath snow, then performing a precise high-arc pounce to land exactly on target even when they can't see or hear their prey directly</li>
-                    <li style="margin-bottom: 10px;">They're highly vocal animals with over 40 different vocalizations, including barks, screams, howls, and "gekkering" (a stuttering chatter during aggressive encounters)</li>
-                    <li style="margin-bottom: 10px;">Red fox populations include non-breeding "helper" foxes (usually grown offspring) that assist in raising the next generation of kits</li>
-                    <li style="margin-bottom: 10px;">They're extremely playful and have been observed "playing" with objects and engaging in solo games like tossing and catching items</li>
-                    <li style="margin-bottom: 10px;">Foxes live in family groups typically consisting of a mated pair and their offspring, though some populations form larger groups with multiple females</li>
-                    <li style="margin-bottom: 10px;">They can run up to 30 mph (48 km/h) and can jump over 6-foot (2-meter) fences</li>
-                    <li style="margin-bottom: 10px;">The phrase "crazy like a fox" refers to their clever, cunning nature—they're highly intelligent problem-solvers capable of adapting to new environments and challenges</li>
-                </ul>
-            </section>
-        </div>
+                <section>
+                    <h2 class="section-h2">Fun Facts</h2>
+                    <ul style="line-height: 1.8; color: #333; padding-left: 25px;">
+                        <li style="margin-bottom: 10px;">Foxes use Earth's magnetic field to hunt, detecting the field to triangulate prey hidden beneath snow, then performing a precise high-arc pounce to land exactly on target even when they can't see or hear their prey directly</li>
+                        <li style="margin-bottom: 10px;">They're highly vocal animals with over 40 different vocalizations, including barks, screams, howls, and "gekkering" (a stuttering chatter during aggressive encounters)</li>
+                        <li style="margin-bottom: 10px;">Red fox populations include non-breeding "helper" foxes (usually grown offspring) that assist in raising the next generation of kits</li>
+                        <li style="margin-bottom: 10px;">They're extremely playful and have been observed "playing" with objects and engaging in solo games like tossing and catching items</li>
+                        <li style="margin-bottom: 10px;">Foxes live in family groups typically consisting of a mated pair and their offspring, though some populations form larger groups with multiple females</li>
+                        <li style="margin-bottom: 10px;">They can run up to 30 mph (48 km/h) and can jump over 6-foot (2-meter) fences</li>
+                        <li style="margin-bottom: 10px;">The phrase "crazy like a fox" refers to their clever, cunning nature—they're highly intelligent problem-solvers capable of adapting to new environments and challenges</li>
+                    </ul>
+                </section>
+            </div>
 
         <p><strong>Arctic Fox page coming soon!</strong></p>
     </main>
@@ -193,5 +126,6 @@
         <p>&copy; 2026 Cristian Medina</p>
         <a href="https://en.wikipedia.org/wiki/Fox" target="_blank">More About Fox</a>
     </footer>
+    <script src="../../js/app.js"></script>
 </body>
 </html>

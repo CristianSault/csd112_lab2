@@ -9,6 +9,7 @@
 <body>
     <header>
         <h1>My 6 Favorite Animals 🐼🦊🐙🦅</h1>
+        <button id="theme-btn">Dark Mode</button>
     </header>
     <nav>
         <ul>
@@ -121,9 +122,60 @@
             <figcaption>Fig 1. <strong>Overwhelming cuteness</strong> is the red panda's superpower!</figcaption>
         </figure>
     </main>
+    <div class="card">
+        <main>
+            <!-- Carousel -->
+            <div style="position: relative; max-width: 800px; margin: 20px auto; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                <!-- Images -->
+                <img id="img1" src="..\images\red_panda\cute_panda.webp" alt="Red Panda" style="width: 100%; display: block;">
+                <img id="img2" src="..\images\capybara\chill_dog.webp" alt="Capybara" style="width: 100%; display: none;">
+                <img id="img3" src="..\images\axolotl\axolotl1.webp" alt="Axolotl" style="width: 100%; display: none;">
+                <img id="img4" src="..\images\octopus\octo1.webp" alt="Octopus" style="width: 100%; display: none;">
+                <img id="img5" src="..\images\peregrine_falcon\falco3.webp" alt="Peregrine Falcon" style="width: 100%; display: none;">
+                <img id="img6" src="..\images\fox\fox1.webp" alt="Fox" style="width: 100%; display: none;">
+                <img id="img7" src="..\images\fox\white\w_fox1.jpg" alt="Arctic Fox" style="width: 100%; display: none;">
+                
+                <!-- Previous Button -->
+                <button onclick="changeSlide(-1)" id="prev_button">❮</button>
+                
+                <!-- Next Button -->
+                <button onclick="changeSlide(1)" id="next_button">❯</button>
+                
+                <!-- Dots/Indicators -->
+                <div style="text-align: center; padding: 15px 0; position: absolute; bottom: 0; width: 100%;">
+                    <span onclick="currentSlide(1)"></span>
+                    <span onclick="currentSlide(2)"></span>
+                    <span onclick="currentSlide(3)"></span>
+                    <span onclick="currentSlide(4)"></span>
+                    <span onclick="currentSlide(5)"></span>
+                    <span onclick="currentSlide(6)"></span>
+                    <span onclick="currentSlide(7)"></span>
+                </div>
+            </div>
+            <p>This website is dedicated to present <em>my 6 favorite animals</em>. I find each of these animals cute and awesome because of the <strong>superpower</strong> each of them possess.</p>
+                
+            <p>Several pictures of each animal, interesting/fun facts, and general information awaits on their dedicated web pages.</p>
+
+            <!-- Hero Image -->
+            <figure>
+                <img src="..\images\red_panda\laying_panda.jpeg" width="700" alt="A red panda resting on a tree branch">
+                <figcaption>Fig 1. <strong>Overwhelming cuteness</strong> is the red panda's superpower!</figcaption>
+            </figure>
+            
+        </main>
+        <section class="sec-info">
+            <h3 id="nH3">The VIP Lounge</h3>
+            <input id="nInpTxt" type="text" placeholder="Type here..."></input>
+            <button id="nBtn" class="btn-outline">Verify Access</button>
+            <p id="nMsgP"></p>
+        </section>
+    </div>
     <footer>
         <p>&copy; 2026 Cristian Medina</p>
-        <a href="https://en.wikipedia.org/wiki/Red_panda" target="_blank"">Visit Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Red_panda" target="_blank">Visit Official Site</a>
+        <button id="secret-btn" >Secret Animal</button>
+        <div id="secret-box"><img id="secret" src="images\tardigrade.webp"></div>
     </footer>
+    <script src="js/app.js"></script>
 </body>
 </html>
